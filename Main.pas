@@ -150,11 +150,10 @@ type
     procedure ToolButton23Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
+    procedure Edit1KeyPress(Sender: TObject; var Key: Char);
   private
     TStrings_main: TStrings;
     sl4undo1: TStrings;
-//    sl4undo2: TStrings;
-//    sl4undo3: TStrings;
 //    function SearchString(const FindStr, SourceString: string; Num: Integer): Integer;
     function PosExD(const FindStr, SourceStr: string; Num: Integer): Integer;
     procedure save4undo(listbox: TListBox);
@@ -620,7 +619,6 @@ var
   i: integer;
   sl_tmp: TStrings;
 begin
-//  if not cbDontClearInList.Checked then
   if not PopupMenu3.Items[0].Checked then
   begin
     lbTextColumn_in.Sorted := false;
@@ -645,7 +643,6 @@ begin
     sbMain.Panels[0].Text := 'Кол-во элементов в списке: ' + IntToStr(lbTextColumn_in.Count);
 
     sl_tmp.Free;
-  //  N4.Checked := true;
   end
   else
     MessageDlg('Не разобрать строку', mtError, [mbOK], 0);
@@ -688,6 +685,11 @@ end;
 procedure TfrmMain.aUndo4StrOperUpdate(Sender: TObject);
 begin
   aUndo4StrOper.Enabled := sl4undo1 <> nil;
+end;
+
+procedure TfrmMain.Edit1KeyPress(Sender: TObject; var Key: Char);
+begin
+  RadioButton2.Checked := true;
 end;
 
 function TfrmMain.GetWords(const S: string; L: TStrings;
