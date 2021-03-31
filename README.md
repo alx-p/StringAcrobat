@@ -1,2 +1,2 @@
 # StringAcrobat
-Util for DB developers
+> Util for DB developers
