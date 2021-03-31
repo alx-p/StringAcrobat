@@ -106,7 +106,6 @@ object frmMain: TfrmMain
                 Left = 39
                 Top = 0
                 Action = aCopyResultToBuffer
-                ImageIndex = 2
                 ParentShowHint = False
                 ShowHint = True
               end
@@ -408,7 +407,6 @@ object frmMain: TfrmMain
               Left = 54
               Top = 0
               Action = aUndo4StrOper
-              ImageIndex = 7
               ParentShowHint = False
               ShowHint = True
             end
@@ -425,7 +423,6 @@ object frmMain: TfrmMain
               Top = 0
               Hint = #1042#1099#1076#1077#1083#1080#1090#1100' '#1074#1077#1089#1100' '#1090#1077#1082#1089#1090' '#1080' '#1089#1082#1086#1087#1080#1088#1086#1074#1082#1072#1090#1100' '#1074' '#1073#1091#1092#1077#1088
               Action = aSelectAllText
-              ImageIndex = 2
               ParentShowHint = False
               ShowHint = True
             end
@@ -857,23 +854,13 @@ object frmMain: TfrmMain
       end
     end
   end
-  object ActionList1: TActionList
-    Left = 364
-    Top = 84
-    object aSortElementList: TAction
-      Caption = 'aSortElementList'
-      Hint = #1054#1090#1089#1086#1088#1090#1080#1088#1086#1074#1072#1090#1100
-      ImageIndex = 3
-      OnUpdate = aSortElementListUpdate
-    end
-  end
   object ImList24: TImageList
     Height = 24
     Width = 24
     Left = 360
     Top = 256
     Bitmap = {
-      494C01010100D000EC0118001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010100D000F00118001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000001800000001002000000000000024
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -1177,15 +1164,15 @@ object frmMain: TfrmMain
       00000000FFFFFF00000000000000000000000000000000000000000000000000
       000000000000}
   end
-  object ActionList2: TActionList
-    Images = ImList24
-    Left = 248
-    Top = 144
+  object ActionList_main: TActionList
+    Images = ImageList24
+    Left = 392
+    Top = 120
     object aCopyResultToBuffer: TAction
       Category = 'ColumnToString'
       Caption = 'aCopyResultToBuffer'
       Hint = #1057#1082#1086#1087#1080#1088#1086#1074#1072#1090#1100' '#1074#1089#1105' '#1074' '#1073#1091#1092#1077#1088
-      ImageIndex = 0
+      ImageIndex = 2
       OnExecute = aCopyResultToBufferExecute
       OnUpdate = aCopyResultToBufferUpdate
     end
@@ -1193,7 +1180,7 @@ object frmMain: TfrmMain
       Category = 'StringOperation'
       Caption = 'SelectAllText'
       Hint = #1042#1099#1076#1077#1083#1080#1090#1100' '#1074#1077#1089#1100' '#1090#1077#1082#1089#1090
-      ImageIndex = 6
+      ImageIndex = 2
       OnExecute = aSelectAllTextExecute
       OnUpdate = aSelectAllTextUpdate
     end
@@ -1201,7 +1188,7 @@ object frmMain: TfrmMain
       Category = 'StringOperation'
       Caption = 'aUndo4StrOper'
       Hint = #1054#1090#1084#1077#1085#1080#1090#1100' '#1087#1086#1089#1083#1077#1076#1085#1077#1077' '#1076#1077#1081#1089#1090#1074#1080#1077
-      ImageIndex = 5
+      ImageIndex = 7
       OnExecute = aUndo4StrOperExecute
       OnUpdate = aUndo4StrOperUpdate
     end
@@ -1261,7 +1248,7 @@ object frmMain: TfrmMain
     Left = 552
     Top = 192
     Bitmap = {
-      494C01010800A000780018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010800A0007C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000060000000480000000100200000000000006C
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

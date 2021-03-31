@@ -34,15 +34,13 @@ type
     ToolBar1: TToolBar;
     Memo1: TMemo;
     ToolButton1: TToolButton;
-    ActionList1: TActionList;
-    aSortElementList: TAction;
     ToolBar4: TToolBar;
     Label5: TLabel;
     ComboBox1: TComboBox;
     ToolBar5: TToolBar;
     ToolButton18: TToolButton;
     ImList24: TImageList;
-    ActionList2: TActionList;
+    ActionList_main: TActionList;
     aCopyResultToBuffer: TAction;
     ToolBar6: TToolBar;
     ToolButton19: TToolButton;
@@ -117,7 +115,6 @@ type
     procedure miExitClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure tsColToStrHide(Sender: TObject);
-    procedure aSortElementListUpdate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     function GetWords(const S: string; L: TStrings; Delimiters: TSysCharSet): integer;
     procedure ToolButton18Click(Sender: TObject);
@@ -662,17 +659,12 @@ end;
 procedure TfrmMain.aSelectAllTextExecute(Sender: TObject);
 begin
   ListBox1.SelectAll;
-  Clipboard.AsText :=  ListBox1.Items.Text;
+  Clipboard.AsText := ListBox1.Items.Text;
 end;
 
 procedure TfrmMain.aSelectAllTextUpdate(Sender: TObject);
 begin
   aSelectAllText.Enabled := ListBox1.Count > 0;
-end;
-
-procedure TfrmMain.aSortElementListUpdate(Sender: TObject);
-begin
-  aSortElementList.Enabled := not lbTextColumn_in.Sorted;
 end;
 
 procedure TfrmMain.aUndo4StrOperExecute(Sender: TObject);
