@@ -353,32 +353,20 @@ begin
     ListBox1.Items[i] := Trim(ListBox1.Items[i]);
 end;
 
-function TfrmMain.PosExD(const FindStr, SourceStr: string;
-  Num: Integer): Integer;
+function TfrmMain.PosExD(const FindStr, SourceStr: string; Num: Integer): Integer;
 var
   i: integer;
   l_found_cnt: integer;
   l_num: integer;
+  l_length_source_str: integer;
 begin
   l_found_cnt := 0;
+  l_length_source_str := length(SourceStr);
+
   if Num > 0 then
   begin
     l_num := Num;
-    for i := 1 to length(SourceStr) do
-    begin
-      if SourceStr[i] = FindStr then
-        Inc(l_found_cnt);
-      if l_found_cnt = l_num then
-      begin
-        Result := i;
-        Exit;
-      end;
-    end;
-  end;
-  if Num < 0 then
-  begin
-    l_num := Num*-1;
-    for i := length(SourceStr) downto 1 do
+    for i := 1 to l_length_source_str do
     begin
       if SourceStr[i] = FindStr then
         Inc(l_found_cnt);
@@ -390,6 +378,22 @@ begin
     end;
   end;
 
+  if Num < 0 then
+  begin
+    l_num := Num*-1;
+    for i := l_length_source_str downto 1 do
+    begin
+      if SourceStr[i] = FindStr then
+        Inc(l_found_cnt);
+      if l_found_cnt = l_num then
+      begin
+        Result := i;
+        Exit;
+      end;
+    end;
+  end;
+
+  Result := l_length_source_str+1;
 end;
 
 procedure TfrmMain.save4undo(listbox: TListBox);
@@ -459,6 +463,7 @@ begin
 
       s := ListBox1.Items[i];
       i_pos := PosExD(Edit1.Text, s, SpinEdit1.Value*-1);
+      //ShowMessage(IntToStr(i_pos));
       l_len := length(s);
 
       ListBox1.Items[i] := copy(s, 1, PosExD(Edit1.Text, s,  SpinEdit1.Value*-1)-1);
