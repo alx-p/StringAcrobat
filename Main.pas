@@ -39,7 +39,6 @@ type
     ComboBox1: TComboBox;
     ToolBar5: TToolBar;
     ToolButton18: TToolButton;
-    ImList24: TImageList;
     ActionList_main: TActionList;
     aCopyResultToBuffer: TAction;
     ToolBar6: TToolBar;

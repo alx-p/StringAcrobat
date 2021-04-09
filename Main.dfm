@@ -35,324 +35,9 @@ object frmMain: TfrmMain
     Top = 0
     Width = 824
     Height = 524
-    ActivePage = tsColToStr
+    ActivePage = tsCountLetter
     Align = alClient
     TabOrder = 1
-    object tsColToStr: TTabSheet
-      Caption = #1050#1086#1083#1086#1085#1082#1072' '#1074' '#1089#1090#1088#1086#1082#1091
-      OnHide = tsColToStrHide
-      object Panel1: TPanel
-        Left = 0
-        Top = 0
-        Width = 816
-        Height = 496
-        Align = alClient
-        BevelOuter = bvNone
-        TabOrder = 0
-        object Splitter1: TSplitter
-          Left = 273
-          Top = 0
-          Height = 496
-          ExplicitHeight = 378
-        end
-        object Panel3: TPanel
-          Left = 276
-          Top = 0
-          Width = 540
-          Height = 496
-          Align = alClient
-          BevelOuter = bvNone
-          TabOrder = 0
-          object Panel14: TPanel
-            Left = 0
-            Top = 0
-            Width = 540
-            Height = 496
-            Align = alClient
-            BevelOuter = bvNone
-            TabOrder = 0
-            object ToolBar1: TToolBar
-              Left = 0
-              Top = 0
-              Width = 540
-              Height = 30
-              AutoSize = True
-              ButtonHeight = 30
-              ButtonWidth = 31
-              Caption = 'ToolBar1'
-              EdgeInner = esNone
-              EdgeOuter = esNone
-              Images = ImageList24
-              TabOrder = 0
-              object ToolButton3: TToolButton
-                Left = 0
-                Top = 0
-                Hint = #1055#1088#1077#1086#1073#1088#1072#1079#1086#1074#1072#1090#1100' '#1074' '#1089#1090#1088#1086#1082#1091' '#1095#1077#1088#1077#1079' '#1079#1072#1087#1103#1090#1091#1102
-                Caption = 'ToolButton3'
-                ImageIndex = 1
-                ParentShowHint = False
-                ShowHint = True
-                OnClick = ToolButton3Click
-              end
-              object ToolButton4: TToolButton
-                Left = 31
-                Top = 0
-                Width = 8
-                Caption = 'ToolButton4'
-                ImageIndex = 1
-                Style = tbsSeparator
-              end
-              object ToolButton1: TToolButton
-                Left = 39
-                Top = 0
-                Action = aCopyResultToBuffer
-                ParentShowHint = False
-                ShowHint = True
-              end
-            end
-            object Memo1: TMemo
-              Left = 0
-              Top = 30
-              Width = 540
-              Height = 466
-              Align = alClient
-              Font.Charset = RUSSIAN_CHARSET
-              Font.Color = clWindowText
-              Font.Height = -13
-              Font.Name = 'Courier New'
-              Font.Style = []
-              ParentFont = False
-              ScrollBars = ssVertical
-              TabOrder = 1
-            end
-          end
-        end
-        object Panel5: TPanel
-          Left = 0
-          Top = 0
-          Width = 273
-          Height = 496
-          Align = alLeft
-          BevelOuter = bvNone
-          TabOrder = 1
-          object ToolBar6: TToolBar
-            Left = 0
-            Top = 0
-            Width = 273
-            Height = 29
-            ButtonHeight = 30
-            ButtonWidth = 31
-            Caption = 'ToolBar6'
-            Images = ImageList24
-            TabOrder = 0
-            object ToolButton19: TToolButton
-              Left = 0
-              Top = 0
-              Hint = #1042#1089#1090#1072#1074#1080#1090#1100' '#1080#1079' '#1073#1091#1092#1077#1088#1072
-              Caption = 'ToolButton19'
-              DropdownMenu = PopupMenu3
-              ImageIndex = 0
-              ParentShowHint = False
-              ShowHint = True
-              Style = tbsDropDown
-              OnClick = ToolButton19Click
-            end
-          end
-          object lbTextColumn_in: TListBox
-            Left = 0
-            Top = 29
-            Width = 273
-            Height = 467
-            Align = alClient
-            Font.Charset = RUSSIAN_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -13
-            Font.Name = 'Courier New'
-            Font.Style = []
-            MultiSelect = True
-            ParentFont = False
-            TabOrder = 1
-          end
-        end
-      end
-    end
-    object tsStrToCol: TTabSheet
-      Caption = #1057#1090#1088#1086#1082#1072' '#1074' '#1082#1086#1083#1086#1085#1082#1091
-      ImageIndex = 1
-      object Panel6: TPanel
-        Left = 0
-        Top = 0
-        Width = 816
-        Height = 496
-        Align = alClient
-        BevelOuter = bvNone
-        TabOrder = 0
-        object Splitter2: TSplitter
-          Left = 307
-          Top = 0
-          Height = 496
-          ExplicitLeft = 281
-          ExplicitHeight = 378
-        end
-        object Panel8: TPanel
-          Left = 310
-          Top = 0
-          Width = 506
-          Height = 496
-          Align = alClient
-          BevelOuter = bvNone
-          TabOrder = 0
-          object mSTCto: TMemo
-            Left = 0
-            Top = 29
-            Width = 506
-            Height = 467
-            Align = alClient
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -13
-            Font.Name = 'Courier New'
-            Font.Style = []
-            ParentFont = False
-            ScrollBars = ssVertical
-            TabOrder = 0
-          end
-          object ToolBar5: TToolBar
-            Left = 0
-            Top = 0
-            Width = 506
-            Height = 29
-            ButtonHeight = 30
-            ButtonWidth = 31
-            Caption = 'ToolBar5'
-            Images = ImageList24
-            TabOrder = 1
-            object ToolButton17: TToolButton
-              Left = 0
-              Top = 0
-              Hint = #1055#1088#1077#1086#1073#1088#1072#1079#1086#1074#1072#1090#1100' '#1074' '#1082#1086#1083#1086#1085#1082#1091
-              Caption = 'ToolButton17'
-              ImageIndex = 1
-              ParentShowHint = False
-              ShowHint = True
-              OnClick = ToolButton17Click
-            end
-            object ToolButton28: TToolButton
-              Left = 31
-              Top = 0
-              Width = 8
-              Caption = 'ToolButton28'
-              ImageIndex = 5
-              Style = tbsSeparator
-            end
-            object ToolButton18: TToolButton
-              Left = 39
-              Top = 0
-              Hint = #1059#1073#1088#1072#1090#1100' '#1083#1080#1096#1085#1080#1077' '#1087#1088#1086#1073#1077#1083#1099
-              Caption = 'ToolButton18'
-              ImageIndex = 3
-              ParentShowHint = False
-              ShowHint = True
-              OnClick = ToolButton18Click
-            end
-            object ToolButton5: TToolButton
-              Left = 70
-              Top = 0
-              Width = 8
-              Caption = 'ToolButton5'
-              ImageIndex = 5
-              Style = tbsSeparator
-            end
-            object ToolButton21: TToolButton
-              Left = 78
-              Top = 0
-              Hint = #1042#1099#1076#1077#1083#1080#1090#1100' '#1074#1089#1105' '#1080' '#1089#1082#1086#1087#1080#1088#1086#1074#1072#1090#1100
-              Caption = 'ToolButton21'
-              ImageIndex = 2
-              OnClick = ToolButton21Click
-            end
-          end
-        end
-        object Panel10: TPanel
-          Left = 0
-          Top = 0
-          Width = 307
-          Height = 496
-          Align = alLeft
-          BevelOuter = bvNone
-          TabOrder = 1
-          object mSTCfrom: TMemo
-            Left = 0
-            Top = 30
-            Width = 307
-            Height = 466
-            Align = alClient
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -13
-            Font.Name = 'Courier New'
-            Font.Style = []
-            ParentFont = False
-            ScrollBars = ssVertical
-            TabOrder = 0
-          end
-          object ToolBar4: TToolBar
-            Left = 0
-            Top = 0
-            Width = 307
-            Height = 30
-            AutoSize = True
-            ButtonHeight = 30
-            ButtonWidth = 31
-            Caption = 'ToolBar4'
-            Images = ImageList24
-            TabOrder = 1
-            object ToolButton16: TToolButton
-              Left = 0
-              Top = 0
-              Hint = #1042#1089#1090#1072#1074#1080#1090#1100' '#1080#1079' '#1073#1091#1092#1077#1088#1072
-              Caption = 'ToolButton16'
-              ImageIndex = 0
-              ParentShowHint = False
-              ShowHint = True
-              OnClick = ToolButton16Click
-            end
-            object Label5: TLabel
-              Left = 31
-              Top = 0
-              Width = 98
-              Height = 30
-              Hint = #1056#1072#1079#1076#1077#1083#1080#1090#1077#1083#1100
-              Align = alClient
-              Alignment = taCenter
-              AutoSize = False
-              Caption = #1048#1089#1087#1086#1083#1100#1079#1086#1074#1072#1090#1100' '#1088#1072#1079#1076#1077#1083#1080#1090#1077#1083#1100
-              ParentShowHint = False
-              ShowHint = True
-              WordWrap = True
-            end
-            object ComboBox1: TComboBox
-              Left = 129
-              Top = 0
-              Width = 160
-              Height = 24
-              Font.Charset = DEFAULT_CHARSET
-              Font.Color = clWindowText
-              Font.Height = -13
-              Font.Name = 'MS Sans Serif'
-              Font.Style = [fsBold]
-              ParentFont = False
-              TabOrder = 0
-              Items.Strings = (
-                ', - ['#1079#1072#1087#1103#1090#1072#1103']'
-                '; - ['#1090#1086#1095#1082#1072' '#1089' '#1079#1072#1087#1103#1090#1086#1081']'
-                ': - ['#1076#1074#1086#1077#1090#1086#1095#1080#1077']'
-                '  - ['#1087#1088#1086#1073#1077#1083']')
-            end
-          end
-        end
-      end
-    end
     object tsCountLetter: TTabSheet
       Caption = #1057#1090#1088#1086#1082#1086#1074#1099#1077' '#1086#1087#1077#1088#1072#1094#1080#1080
       ImageIndex = 2
@@ -502,14 +187,14 @@ object frmMain: TfrmMain
             ButtonHeight = 30
             ButtonWidth = 31
             Caption = 'ToolBar2'
-            Images = ImList24
+            Images = ImageList24
             TabOrder = 1
             object ToolButton11: TToolButton
               Left = 0
               Top = 0
               Caption = 'ToolButton11'
               Down = True
-              ImageIndex = 0
+              ImageIndex = 8
               Marked = True
               Style = tbsCheck
               OnClick = ToolButton11Click
@@ -835,6 +520,321 @@ object frmMain: TfrmMain
         end
       end
     end
+    object tsColToStr: TTabSheet
+      Caption = #1050#1086#1083#1086#1085#1082#1072' '#1074' '#1089#1090#1088#1086#1082#1091
+      OnHide = tsColToStrHide
+      object Panel1: TPanel
+        Left = 0
+        Top = 0
+        Width = 816
+        Height = 496
+        Align = alClient
+        BevelOuter = bvNone
+        TabOrder = 0
+        object Splitter1: TSplitter
+          Left = 273
+          Top = 0
+          Height = 496
+          ExplicitHeight = 378
+        end
+        object Panel3: TPanel
+          Left = 276
+          Top = 0
+          Width = 540
+          Height = 496
+          Align = alClient
+          BevelOuter = bvNone
+          TabOrder = 0
+          object Panel14: TPanel
+            Left = 0
+            Top = 0
+            Width = 540
+            Height = 496
+            Align = alClient
+            BevelOuter = bvNone
+            TabOrder = 0
+            object ToolBar1: TToolBar
+              Left = 0
+              Top = 0
+              Width = 540
+              Height = 30
+              AutoSize = True
+              ButtonHeight = 30
+              ButtonWidth = 31
+              Caption = 'ToolBar1'
+              EdgeInner = esNone
+              EdgeOuter = esNone
+              Images = ImageList24
+              TabOrder = 0
+              object ToolButton3: TToolButton
+                Left = 0
+                Top = 0
+                Hint = #1055#1088#1077#1086#1073#1088#1072#1079#1086#1074#1072#1090#1100' '#1074' '#1089#1090#1088#1086#1082#1091' '#1095#1077#1088#1077#1079' '#1079#1072#1087#1103#1090#1091#1102
+                Caption = 'ToolButton3'
+                ImageIndex = 1
+                ParentShowHint = False
+                ShowHint = True
+                OnClick = ToolButton3Click
+              end
+              object ToolButton4: TToolButton
+                Left = 31
+                Top = 0
+                Width = 8
+                Caption = 'ToolButton4'
+                ImageIndex = 1
+                Style = tbsSeparator
+              end
+              object ToolButton1: TToolButton
+                Left = 39
+                Top = 0
+                Action = aCopyResultToBuffer
+                ParentShowHint = False
+                ShowHint = True
+              end
+            end
+            object Memo1: TMemo
+              Left = 0
+              Top = 30
+              Width = 540
+              Height = 466
+              Align = alClient
+              Font.Charset = RUSSIAN_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Courier New'
+              Font.Style = []
+              ParentFont = False
+              ScrollBars = ssVertical
+              TabOrder = 1
+            end
+          end
+        end
+        object Panel5: TPanel
+          Left = 0
+          Top = 0
+          Width = 273
+          Height = 496
+          Align = alLeft
+          BevelOuter = bvNone
+          TabOrder = 1
+          object ToolBar6: TToolBar
+            Left = 0
+            Top = 0
+            Width = 273
+            Height = 29
+            ButtonHeight = 30
+            ButtonWidth = 31
+            Caption = 'ToolBar6'
+            Images = ImageList24
+            TabOrder = 0
+            object ToolButton19: TToolButton
+              Left = 0
+              Top = 0
+              Hint = #1042#1089#1090#1072#1074#1080#1090#1100' '#1080#1079' '#1073#1091#1092#1077#1088#1072
+              Caption = 'ToolButton19'
+              DropdownMenu = PopupMenu3
+              ImageIndex = 0
+              ParentShowHint = False
+              ShowHint = True
+              Style = tbsDropDown
+              OnClick = ToolButton19Click
+            end
+          end
+          object lbTextColumn_in: TListBox
+            Left = 0
+            Top = 29
+            Width = 273
+            Height = 467
+            Align = alClient
+            Font.Charset = RUSSIAN_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Courier New'
+            Font.Style = []
+            MultiSelect = True
+            ParentFont = False
+            TabOrder = 1
+          end
+        end
+      end
+    end
+    object tsStrToCol: TTabSheet
+      Caption = #1057#1090#1088#1086#1082#1072' '#1074' '#1082#1086#1083#1086#1085#1082#1091
+      ImageIndex = 1
+      object Panel6: TPanel
+        Left = 0
+        Top = 0
+        Width = 816
+        Height = 496
+        Align = alClient
+        BevelOuter = bvNone
+        TabOrder = 0
+        object Splitter2: TSplitter
+          Left = 307
+          Top = 0
+          Height = 496
+          ExplicitLeft = 281
+          ExplicitHeight = 378
+        end
+        object Panel8: TPanel
+          Left = 310
+          Top = 0
+          Width = 506
+          Height = 496
+          Align = alClient
+          BevelOuter = bvNone
+          TabOrder = 0
+          object mSTCto: TMemo
+            Left = 0
+            Top = 29
+            Width = 506
+            Height = 467
+            Align = alClient
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Courier New'
+            Font.Style = []
+            ParentFont = False
+            ScrollBars = ssVertical
+            TabOrder = 0
+          end
+          object ToolBar5: TToolBar
+            Left = 0
+            Top = 0
+            Width = 506
+            Height = 29
+            ButtonHeight = 30
+            ButtonWidth = 31
+            Caption = 'ToolBar5'
+            Images = ImageList24
+            TabOrder = 1
+            object ToolButton17: TToolButton
+              Left = 0
+              Top = 0
+              Hint = #1055#1088#1077#1086#1073#1088#1072#1079#1086#1074#1072#1090#1100' '#1074' '#1082#1086#1083#1086#1085#1082#1091
+              Caption = 'ToolButton17'
+              ImageIndex = 1
+              ParentShowHint = False
+              ShowHint = True
+              OnClick = ToolButton17Click
+            end
+            object ToolButton28: TToolButton
+              Left = 31
+              Top = 0
+              Width = 8
+              Caption = 'ToolButton28'
+              ImageIndex = 5
+              Style = tbsSeparator
+            end
+            object ToolButton18: TToolButton
+              Left = 39
+              Top = 0
+              Hint = #1059#1073#1088#1072#1090#1100' '#1083#1080#1096#1085#1080#1077' '#1087#1088#1086#1073#1077#1083#1099
+              Caption = 'ToolButton18'
+              ImageIndex = 3
+              ParentShowHint = False
+              ShowHint = True
+              OnClick = ToolButton18Click
+            end
+            object ToolButton5: TToolButton
+              Left = 70
+              Top = 0
+              Width = 8
+              Caption = 'ToolButton5'
+              ImageIndex = 5
+              Style = tbsSeparator
+            end
+            object ToolButton21: TToolButton
+              Left = 78
+              Top = 0
+              Hint = #1042#1099#1076#1077#1083#1080#1090#1100' '#1074#1089#1105' '#1080' '#1089#1082#1086#1087#1080#1088#1086#1074#1072#1090#1100
+              Caption = 'ToolButton21'
+              ImageIndex = 2
+              OnClick = ToolButton21Click
+            end
+          end
+        end
+        object Panel10: TPanel
+          Left = 0
+          Top = 0
+          Width = 307
+          Height = 496
+          Align = alLeft
+          BevelOuter = bvNone
+          TabOrder = 1
+          object mSTCfrom: TMemo
+            Left = 0
+            Top = 30
+            Width = 307
+            Height = 466
+            Align = alClient
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Courier New'
+            Font.Style = []
+            ParentFont = False
+            ScrollBars = ssVertical
+            TabOrder = 0
+          end
+          object ToolBar4: TToolBar
+            Left = 0
+            Top = 0
+            Width = 307
+            Height = 30
+            AutoSize = True
+            ButtonHeight = 30
+            ButtonWidth = 31
+            Caption = 'ToolBar4'
+            Images = ImageList24
+            TabOrder = 1
+            object ToolButton16: TToolButton
+              Left = 0
+              Top = 0
+              Hint = #1042#1089#1090#1072#1074#1080#1090#1100' '#1080#1079' '#1073#1091#1092#1077#1088#1072
+              Caption = 'ToolButton16'
+              ImageIndex = 0
+              ParentShowHint = False
+              ShowHint = True
+              OnClick = ToolButton16Click
+            end
+            object Label5: TLabel
+              Left = 31
+              Top = 0
+              Width = 98
+              Height = 30
+              Hint = #1056#1072#1079#1076#1077#1083#1080#1090#1077#1083#1100
+              Align = alClient
+              Alignment = taCenter
+              AutoSize = False
+              Caption = #1048#1089#1087#1086#1083#1100#1079#1086#1074#1072#1090#1100' '#1088#1072#1079#1076#1077#1083#1080#1090#1077#1083#1100
+              ParentShowHint = False
+              ShowHint = True
+              WordWrap = True
+            end
+            object ComboBox1: TComboBox
+              Left = 129
+              Top = 3
+              Width = 160
+              Height = 24
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'MS Sans Serif'
+              Font.Style = [fsBold]
+              ParentFont = False
+              TabOrder = 0
+              Items.Strings = (
+                ', - ['#1079#1072#1087#1103#1090#1072#1103']'
+                '; - ['#1090#1086#1095#1082#1072' '#1089' '#1079#1072#1087#1103#1090#1086#1081']'
+                ': - ['#1076#1074#1086#1077#1090#1086#1095#1080#1077']'
+                '  - ['#1087#1088#1086#1073#1077#1083']')
+            end
+          end
+        end
+      end
+    end
   end
   object MainMenu1: TMainMenu
     Left = 408
@@ -854,14 +854,92 @@ object frmMain: TfrmMain
       end
     end
   end
-  object ImList24: TImageList
+  object ActionList_main: TActionList
+    Images = ImageList24
+    Left = 632
+    Top = 352
+    object aCopyResultToBuffer: TAction
+      Category = 'ColumnToString'
+      Caption = 'aCopyResultToBuffer'
+      Hint = #1057#1082#1086#1087#1080#1088#1086#1074#1072#1090#1100' '#1074#1089#1105' '#1074' '#1073#1091#1092#1077#1088
+      ImageIndex = 2
+      OnExecute = aCopyResultToBufferExecute
+      OnUpdate = aCopyResultToBufferUpdate
+    end
+    object aSelectAllText: TAction
+      Category = 'StringOperation'
+      Caption = 'SelectAllText'
+      Hint = #1042#1099#1076#1077#1083#1080#1090#1100' '#1074#1077#1089#1100' '#1090#1077#1082#1089#1090
+      ImageIndex = 2
+      OnExecute = aSelectAllTextExecute
+      OnUpdate = aSelectAllTextUpdate
+    end
+    object aUndo4StrOper: TAction
+      Category = 'StringOperation'
+      Caption = 'aUndo4StrOper'
+      Hint = #1054#1090#1084#1077#1085#1080#1090#1100' '#1087#1086#1089#1083#1077#1076#1085#1077#1077' '#1076#1077#1081#1089#1090#1074#1080#1077
+      ImageIndex = 7
+      OnExecute = aUndo4StrOperExecute
+      OnUpdate = aUndo4StrOperUpdate
+    end
+  end
+  object PopupMenu3: TPopupMenu
+    Left = 635
+    Top = 296
+    object N6: TMenuItem
+      AutoCheck = True
+      Caption = #1053#1077' '#1086#1095#1080#1097#1072#1090#1100' '#1089#1087#1080#1089#1086#1082' '#1087#1077#1088#1077#1076' '#1076#1086#1073#1072#1074#1083#1077#1085#1080#1077#1084
+    end
+    object N14: TMenuItem
+      Caption = '-'
+    end
+    object N13: TMenuItem
+      AutoCheck = True
+      Caption = #1059#1076#1072#1083#1103#1090#1100' '#1087#1088#1086#1073#1077#1083#1099' '#1087#1088#1080' '#1076#1086#1073#1072#1074#1083#1077#1085#1080#1080' '#1089#1087#1080#1089#1082#1072
+      Checked = True
+    end
+  end
+  object PopupMenu4: TPopupMenu
+    Left = 700
+    Top = 296
+    object N16: TMenuItem
+      Caption = #1059#1076#1072#1083#1080#1090#1100' '#1074#1099#1073#1088#1072#1085#1085#1099#1077' '#1101#1083#1077#1084#1077#1085#1090#1099
+      OnClick = N16Click
+    end
+    object N15: TMenuItem
+      Caption = '-'
+    end
+    object N7: TMenuItem
+      Caption = #1059#1076#1072#1083#1080#1090#1100' '#1076#1091#1073#1083#1080#1082#1072#1090#1099' ('#1089#1087#1080#1089#1086#1082' '#1073#1091#1076#1077#1090' '#1086#1090#1089#1086#1088#1090#1080#1088#1086#1074#1072#1085')'
+      OnClick = N7Click
+    end
+    object N8: TMenuItem
+      Caption = '-'
+    end
+    object N9: TMenuItem
+      Caption = #1059#1076#1072#1083#1080#1090#1100' '#1083#1080#1096#1085#1080#1077' '#1087#1088#1086#1073#1077#1083#1099
+      OnClick = N9Click
+    end
+    object N10: TMenuItem
+      Caption = '-'
+    end
+    object N11: TMenuItem
+      Caption = #1059#1076#1072#1083#1080#1090#1100' '#1086#1076#1080#1085' '#1089#1080#1084#1074#1086#1083' '#1089#1083#1077#1074#1072
+      OnClick = N11Click
+    end
+    object N12: TMenuItem
+      Caption = #1059#1076#1072#1083#1080#1090#1100' '#1086#1076#1080#1085' '#1089#1080#1084#1074#1086#1083' '#1089#1087#1088#1072#1074#1072
+      OnClick = N12Click
+    end
+  end
+  object ImageList24: TImageList
     Height = 24
     Width = 24
-    Left = 360
-    Top = 256
+    Left = 552
+    Top = 192
     Bitmap = {
-      494C01010100D000FC0118001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
-      0000000000003600000028000000600000001800000001002000000000000024
+      494C01010900A000980018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      000000000000360000002800000060000000480000000100200000000000006C
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -1129,394 +1207,6 @@ object frmMain: TfrmMain
       0000000000000000000000000000000000000000000080808000808080008080
       8000808080008080800080808000808080008080800080808000808080008080
       8000808080008080800080808000808080000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000000000000000000000424D3E000000000000003E000000
-      2800000060000000180000000100010000000000200100000000000000000000
-      000000000000000000000000FFFFFF00FFFFFF000000000000000000FE000100
-      0000000000000000FE0001000000000000000000FE0001000000000000000000
-      FE0001000000000000000000FE0001000000000000000000FE00010000000000
-      00000000FE0001000000000000000000FE0001000000000000000000FE000100
-      0000000000000000FE0001000000000000000000FE0001000000000000000000
-      8000010000000000000000008000010000000000000000008000010000000000
-      000000008000010000000000000000008000FF0000000000000000008000FF00
-      00000000000000008000FF0000000000000000008000FF000000000000000000
-      8000FF0000000000000000008000FF0000000000000000008000FF0000000000
-      00000000FFFFFF00000000000000000000000000000000000000000000000000
-      000000000000}
-  end
-  object ActionList_main: TActionList
-    Images = ImageList24
-    Left = 392
-    Top = 120
-    object aCopyResultToBuffer: TAction
-      Category = 'ColumnToString'
-      Caption = 'aCopyResultToBuffer'
-      Hint = #1057#1082#1086#1087#1080#1088#1086#1074#1072#1090#1100' '#1074#1089#1105' '#1074' '#1073#1091#1092#1077#1088
-      ImageIndex = 2
-      OnExecute = aCopyResultToBufferExecute
-      OnUpdate = aCopyResultToBufferUpdate
-    end
-    object aSelectAllText: TAction
-      Category = 'StringOperation'
-      Caption = 'SelectAllText'
-      Hint = #1042#1099#1076#1077#1083#1080#1090#1100' '#1074#1077#1089#1100' '#1090#1077#1082#1089#1090
-      ImageIndex = 2
-      OnExecute = aSelectAllTextExecute
-      OnUpdate = aSelectAllTextUpdate
-    end
-    object aUndo4StrOper: TAction
-      Category = 'StringOperation'
-      Caption = 'aUndo4StrOper'
-      Hint = #1054#1090#1084#1077#1085#1080#1090#1100' '#1087#1086#1089#1083#1077#1076#1085#1077#1077' '#1076#1077#1081#1089#1090#1074#1080#1077
-      ImageIndex = 7
-      OnExecute = aUndo4StrOperExecute
-      OnUpdate = aUndo4StrOperUpdate
-    end
-  end
-  object PopupMenu3: TPopupMenu
-    Left = 115
-    Top = 184
-    object N6: TMenuItem
-      AutoCheck = True
-      Caption = #1053#1077' '#1086#1095#1080#1097#1072#1090#1100' '#1089#1087#1080#1089#1086#1082' '#1087#1077#1088#1077#1076' '#1076#1086#1073#1072#1074#1083#1077#1085#1080#1077#1084
-    end
-    object N14: TMenuItem
-      Caption = '-'
-    end
-    object N13: TMenuItem
-      AutoCheck = True
-      Caption = #1059#1076#1072#1083#1103#1090#1100' '#1087#1088#1086#1073#1077#1083#1099' '#1087#1088#1080' '#1076#1086#1073#1072#1074#1083#1077#1085#1080#1080' '#1089#1087#1080#1089#1082#1072
-      Checked = True
-    end
-  end
-  object PopupMenu4: TPopupMenu
-    Left = 116
-    Top = 232
-    object N16: TMenuItem
-      Caption = #1059#1076#1072#1083#1080#1090#1100' '#1074#1099#1073#1088#1072#1085#1085#1099#1077' '#1101#1083#1077#1084#1077#1085#1090#1099
-      OnClick = N16Click
-    end
-    object N15: TMenuItem
-      Caption = '-'
-    end
-    object N7: TMenuItem
-      Caption = #1059#1076#1072#1083#1080#1090#1100' '#1076#1091#1073#1083#1080#1082#1072#1090#1099' ('#1089#1087#1080#1089#1086#1082' '#1073#1091#1076#1077#1090' '#1086#1090#1089#1086#1088#1090#1080#1088#1086#1074#1072#1085')'
-      OnClick = N7Click
-    end
-    object N8: TMenuItem
-      Caption = '-'
-    end
-    object N9: TMenuItem
-      Caption = #1059#1076#1072#1083#1080#1090#1100' '#1083#1080#1096#1085#1080#1077' '#1087#1088#1086#1073#1077#1083#1099
-      OnClick = N9Click
-    end
-    object N10: TMenuItem
-      Caption = '-'
-    end
-    object N11: TMenuItem
-      Caption = #1059#1076#1072#1083#1080#1090#1100' '#1086#1076#1080#1085' '#1089#1080#1084#1074#1086#1083' '#1089#1083#1077#1074#1072
-      OnClick = N11Click
-    end
-    object N12: TMenuItem
-      Caption = #1059#1076#1072#1083#1080#1090#1100' '#1086#1076#1080#1085' '#1089#1080#1084#1074#1086#1083' '#1089#1087#1088#1072#1074#1072
-      OnClick = N12Click
-    end
-  end
-  object ImageList24: TImageList
-    Height = 24
-    Width = 24
-    Left = 552
-    Top = 192
-    Bitmap = {
-      494C01010800A000880018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
-      000000000000360000002800000060000000480000000100200000000000006C
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -2116,16 +1806,16 @@ object frmMain: TfrmMain
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000424D3E000000000000003E000000
       2800000060000000480000000100010000000000600300000000000000000000
-      000000000000000000000000FFFFFF0000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      00000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      000000000000000000000000FFFFFF00FFFFFF000000000000000000FE000100
+      0000000000000000FE0001000000000000000000FE0001000000000000000000
+      FE0001000000000000000000FE0001000000000000000000FE00010000000000
+      00000000FE0001000000000000000000FE0001000000000000000000FE000100
+      0000000000000000FE0001000000000000000000FE0001000000000000000000
+      8000010000000000000000008000010000000000000000008000010000000000
+      000000008000010000000000000000008000FF0000000000000000008000FF00
+      00000000000000008000FF0000000000000000008000FF000000000000000000
+      8000FF0000000000000000008000FF0000000000000000008000FF0000000000
+      00000000FFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
       FFFF800FDFFFFFFF3FE003E01007DFFF8FFFFFFF3FE001C01003EFFF57FFFFFF
       1FE1F88F93F1F7FEDBFFFFFF9FC1FC9F93F9F9FDDDFFFFFF9FC9FC9F93F9FEFF
       DFFFFFFF8FC9FC8F93F1FF7FDFFFFFFFC009FCCF93F3FFBFDFC01FE1C019F8C7
@@ -2147,8 +1837,8 @@ object frmMain: TfrmMain
       000000000000}
   end
   object PopupMenu_sort: TPopupMenu
-    Left = 120
-    Top = 280
+    Left = 768
+    Top = 296
     object N3: TMenuItem
       Caption = #1055#1086' '#1074#1086#1079#1088#1072#1089#1090#1072#1085#1080#1102
       OnClick = N3Click
