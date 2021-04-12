@@ -459,6 +459,10 @@ object frmMain: TfrmMain
           object TabSheet2: TTabSheet
             Caption = #1042#1089#1090#1072#1074#1082#1072
             ImageIndex = 1
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             object Label6: TLabel
               Left = 12
               Top = 13
@@ -815,7 +819,7 @@ object frmMain: TfrmMain
             end
             object ComboBox1: TComboBox
               Left = 129
-              Top = 3
+              Top = 0
               Width = 160
               Height = 24
               Font.Charset = DEFAULT_CHARSET
@@ -938,7 +942,7 @@ object frmMain: TfrmMain
     Left = 552
     Top = 192
     Bitmap = {
-      494C01010900A000980018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010900A0009C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000060000000480000000100200000000000006C
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

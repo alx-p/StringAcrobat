@@ -214,7 +214,6 @@ begin
     sbMain.Panels[0].Text := 'Кол-во элементов в списке: ' + IntToStr(ListBox1.Count);
 
     sl_tmp.Free;
-//    N4.Checked := true;
   end
   else
     MessageDlg('Не разобрать строку', mtError, [mbOK], 0);
@@ -462,7 +461,6 @@ begin
 
       s := ListBox1.Items[i];
       i_pos := PosExD(Edit1.Text, s, SpinEdit1.Value*-1);
-      //ShowMessage(IntToStr(i_pos));
       l_len := length(s);
 
       ListBox1.Items[i] := copy(s, 1, PosExD(Edit1.Text, s,  SpinEdit1.Value*-1)-1);
@@ -642,7 +640,6 @@ begin
     lbTextColumn_in.Items.AddStrings(TStrings_main);
 
     sbMain.Panels[0].Text := 'Кол-во элементов в списке: ' + IntToStr(lbTextColumn_in.Count);
-
     sl_tmp.Free;
   end
   else
