@@ -5,7 +5,8 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ExtCtrls, ToolWin, ComCtrls, Menus, Buttons, StdCtrls, Clipbrd,
-  ImgList, ActnList, System.Actions, System.ImageList, Vcl.Samples.Spin;
+  ImgList, ActnList, System.Actions, System.ImageList, Vcl.Samples.Spin,
+  SynEdit, SynEditKeyCmds;
 
 type
   TfrmMain = class(TForm)
@@ -57,8 +58,6 @@ type
     N12: TMenuItem;
     N13: TMenuItem;
     N14: TMenuItem;
-    N15: TMenuItem;
-    N16: TMenuItem;
     aSelectAllText: TAction;
     ToolButton16: TToolButton;
     ToolButton17: TToolButton;
@@ -87,7 +86,6 @@ type
     SpinEdit1: TSpinEdit;
     Edit1: TEdit;
     RadioButton2: TRadioButton;
-    ListBox1: TListBox;
     ToolButton29: TToolButton;
     ToolButton30: TToolButton;
     aUndo4StrOper: TAction;
@@ -98,7 +96,6 @@ type
     SpeedButton4: TSpeedButton;
     ToolButton10: TToolButton;
     RadioButton3: TRadioButton;
-    CheckBox1: TCheckBox;
     ToolButton12: TToolButton;
     Label7: TLabel;
     ToolButton5: TToolButton;
@@ -110,6 +107,9 @@ type
     PopupMenu_sort: TPopupMenu;
     N3: TMenuItem;
     N4: TMenuItem;
+    SynEdit1: TSynEdit;
+    ToolButton6: TToolButton;
+    ToolButton14: TToolButton;
     procedure miAboutClick(Sender: TObject);
     procedure miExitClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -127,7 +127,6 @@ type
     procedure N12Click(Sender: TObject);
     procedure ToolButton8Click(Sender: TObject);
     procedure ToolButton13Click(Sender: TObject);
-    procedure N16Click(Sender: TObject);
     procedure aSelectAllTextExecute(Sender: TObject);
     procedure aSelectAllTextUpdate(Sender: TObject);
     procedure ToolButton16Click(Sender: TObject);
@@ -147,13 +146,13 @@ type
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
     procedure Edit1KeyPress(Sender: TObject; var Key: Char);
+    procedure SynEdit1GutterClick(Sender: TObject; Button: TMouseButton; X, Y,
+      Line: Integer; Mark: TSynEditMark);
+    procedure ToolButton14Click(Sender: TObject);
   private
     TStrings_main: TStrings;
-    sl4undo1: TStrings;
 //    function SearchString(const FindStr, SourceString: string; Num: Integer): Integer;
     function PosExD(const FindStr, SourceStr: string; Num: Integer): Integer;
-    procedure save4undo(listbox: TListBox);
-//    TStrings_undo: TStrings;
     { Private declarations }
   public
     { Public declarations }
@@ -163,11 +162,16 @@ var
   frmMain: TfrmMain;
 
 const
-  version_num: string = '2.0';
+  version_num: string = '2.1';
 
 implementation
 
 {$R *.dfm}
+
+procedure TfrmMain.FormShow(Sender: TObject);
+begin
+  Caption := 'String Acrobat v.'+version_num;
+end;
 
 procedure TfrmMain.miAboutClick(Sender: TObject);
 begin
@@ -191,13 +195,9 @@ var
   sl_tmp: TStrings;
 begin
   if not PopupMenu3.Items[0].Checked then
-  begin
-    ListBox1.Sorted := false;
-    ListBox1.Items.Clear;
-  end;
+    synedit1.Lines.Clear;
 
-  if Clipboard.HasFormat(CF_TEXT) then
-  begin
+  try
     sl_tmp := TStringList.Create();
     if TStrings_main = nil then
       TStrings_main := TStringList.Create();
@@ -209,14 +209,14 @@ begin
       for i := 0 to TStrings_main.Count-1 do
         TStrings_main[i] := Trim(TStrings_main[i]);
 
-    ListBox1.Items.AddStrings(TStrings_main);
+    SynEdit1.Lines.AddStrings(TStrings_main);
 
-    sbMain.Panels[0].Text := 'Кол-во элементов в списке: ' + IntToStr(ListBox1.Count);
+    sbMain.Panels[0].Text := 'Кол-во элементов в списке: ' + IntToStr(SynEdit1.Lines.Count);
 
     sl_tmp.Free;
-  end
-  else
-    MessageDlg('Не разобрать строку', mtError, [mbOK], 0);
+  except
+    MessageDlg('Ошибка при вставке текста из буфера обмена', mtError, [mbOK], 0);
+  end;
 end;
 
 procedure TfrmMain.ToolButton3Click(Sender: TObject);
@@ -259,17 +259,11 @@ begin
 end;
 
 procedure TfrmMain.ToolButton8Click(Sender: TObject);
-var
-  i: integer;
-begin
-  save4undo(ListBox1);
-  if ListBox1.SelCount = 0 then
-    for i := 0 to ListBox1.Items.Count-1 do
-      ListBox1.Items[i] := AnsiUpperCase(ListBox1.Items[i])
+begin // в верхний регистр
+  if SynEdit1.SelLength > 0 then
+    SynEdit1.SelText := AnsiUpperCase(SynEdit1.SelText)
   else
-    for i := 0 to ListBox1.Items.Count-1 do
-      if ListBox1.Selected[i] then
-        ListBox1.Items[i] := AnsiUpperCase(ListBox1.Items[i]);
+    SynEdit1.Lines.Text := AnsiUpperCase(SynEdit1.Lines.Text);
 end;
 
 procedure TfrmMain.miExitClick(Sender: TObject);
@@ -281,74 +275,64 @@ procedure TfrmMain.N11Click(Sender: TObject);
 var
   i: integer;
 begin
-  for i := 0 to ListBox1.Items.Count-1 do
-    ListBox1.Items[i] := Copy(ListBox1.Items[i], 2, length(ListBox1.Items[i]));
+  for i := 0 to SynEdit1.Lines.Count-1 do
+    SynEdit1.Lines[i] := Copy(SynEdit1.Lines[i], 2, length(SynEdit1.Lines[i]));
 end;
 
 procedure TfrmMain.N12Click(Sender: TObject);
 var
   i: integer;
 begin
-  for i := 0 to ListBox1.Items.Count-1 do
-    ListBox1.Items[i] := Copy(ListBox1.Items[i], 1, length(ListBox1.Items[i])-1);
-end;
-
-procedure TfrmMain.N16Click(Sender: TObject);
-var
-  i: integer;
-begin
-  for i:=ListBox1.Items.Count-1 downto 0 do
-    if ListBox1.Selected[i] then
-      ListBox1.Items.Delete(i);
-
-  sbMain.Panels[0].Text := 'Кол-во элементов в списке: ' + IntToStr(ListBox1.Count);
+  for i := 0 to SynEdit1.Lines.Count-1 do
+    SynEdit1.Lines[i] := Copy(SynEdit1.Lines[i], 1, length(SynEdit1.Lines[i])-1);
 end;
 
 procedure TfrmMain.N3Click(Sender: TObject);
-begin
-  save4undo(ListBox1);
-  ListBox1.Sorted := true;
-  ListBox1.Sorted := false;
+var
+  sl: TStringList;
+begin // сортировка по возрастанию
+  sl := TStringList.Create;
+  sl.Assign(SynEdit1.Lines);
+  sl.Sort;
+  SynEdit1.Lines.Clear;
+  SynEdit1.Lines.Assign(sl);
+  sl.Free;
 end;
 
 procedure TfrmMain.N4Click(Sender: TObject);
 var
   i: integer;
-  lst: TStringList;
-begin
-  save4undo(ListBox1);
-  ListBox1.Sorted := true;
-  ListBox1.Sorted := false;
-  lst := TStringList.Create;
-  for i:=ListBox1.Items.Count-1 downto 0 do
-    lst.Add(ListBox1.Items[i]);
-  ListBox1.Items.Clear;
-  ListBox1.Items.Assign(lst);
-  lst.Free;
+  sl: TStringList;
+begin // сортировка по убыванию
+  sl := TStringList.Create;
+  sl.Assign(SynEdit1.Lines);
+  sl.Sort;
+  SynEdit1.Lines.Clear;
+  for i := sl.Count-1 downto 0 do
+    SynEdit1.Lines.Add(sl[i]);
+  sl.Free;
 end;
 
 procedure TfrmMain.N7Click(Sender: TObject);
 var
-  i: integer;
-  lst: TStringList;
-begin
-  lst := TStringList.Create;
-  lst.Sorted := True;
-  lst.Duplicates := dupIgnore;
-  for i := 0 to ListBox1.Items.Count-1 do
-    lst.Add(ListBox1.Items[i]);
-  ListBox1.Items.Clear;
-  ListBox1.Items.Assign(lst);
-  lst.Free;
-  sbMain.Panels[0].Text := 'Кол-во элементов в списке: ' + IntToStr(ListBox1.Count);
+  sl: TStringList;
+begin // удаление дубликатов
+  sl := TStringList.Create;
+  sl.Sorted := True;
+  sl.Duplicates := dupIgnore;
+  sl.Assign(SynEdit1.Lines);
+  SynEdit1.Lines.Clear;
+  SynEdit1.Lines.Assign(sl);
+  sl.Free;
+  sbMain.Panels[0].Text := 'Кол-во элементов в списке: ' + IntToStr(SynEdit1.Lines.Count);
 end;
 
 procedure TfrmMain.N9Click(Sender: TObject);
 var
   i: integer;
 begin
-  for i := 0 to ListBox1.Items.Count-1 do
-    ListBox1.Items[i] := Trim(ListBox1.Items[i]);
+  for i := 0 to SynEdit1.Lines.Count-1 do
+    SynEdit1.Lines[i] := Trim(SynEdit1.Lines[i]);
 end;
 
 function TfrmMain.PosExD(const FindStr, SourceStr: string; Num: Integer): Integer;
@@ -394,15 +378,6 @@ begin
   Result := l_length_source_str+1;
 end;
 
-procedure TfrmMain.save4undo(listbox: TListBox);
-begin
-  if sl4undo1 = nil then
-    sl4undo1 := TStringList.Create()
-  else
-    sl4undo1.Clear;
-  sl4undo1.AddStrings(listbox.Items);
-end;
-
 {
 function TfrmMain.SearchString(const FindStr, SourceString: string;
   Num: Integer): Integer;
@@ -438,70 +413,39 @@ end;
 procedure TfrmMain.SpeedButton1Click(Sender: TObject);
 var
   i: integer;
-  s: string;
-  i_pos: integer;
-  l_len: integer;
-  b: boolean;
 begin
-  save4undo(ListBox1);
-
   if RadioButton1.Checked then
-    for i:=0 to ListBox1.Items.Count-1 do
-    begin
-      ListBox1.Items[i] := TrimRight(ListBox1.Items[i]);
-    end;
+    for i := 0 to SynEdit1.Lines.Count-1 do
+      SynEdit1.Lines[i] := TrimRight(SynEdit1.Lines[i]);
 
   if RadioButton2.Checked then
-    for i:=0 to ListBox1.Items.Count-1 do
-    begin
-      b := ListBox1.Selected[i];
-
-      if CheckBox1.Checked and not ListBox1.Selected[i] then
-        Continue;
-
-      s := ListBox1.Items[i];
-      i_pos := PosExD(Edit1.Text, s, SpinEdit1.Value*-1);
-      l_len := length(s);
-
-      ListBox1.Items[i] := copy(s, 1, PosExD(Edit1.Text, s,  SpinEdit1.Value*-1)-1);
-      ListBox1.Selected[i] := b;
-    end;
+    for i := 0 to SynEdit1.Lines.Count-1 do
+      SynEdit1.Lines[i] := Copy(SynEdit1.Lines[i], 1, PosExD(Edit1.Text,
+                                                             SynEdit1.Lines[i],
+                                                             SpinEdit1.Value*-1)-1);
 
   if RadioButton3.Checked then
-    for i := 0 to ListBox1.Items.Count-1 do
-      ListBox1.Items[i] := Copy(ListBox1.Items[i], 1, length(ListBox1.Items[i])-1);
+    for i := 0 to SynEdit1.Lines.Count-1 do
+      SynEdit1.Lines[i] := Copy(SynEdit1.Lines[i], 1, Length(SynEdit1.Lines[i])-1);
 end;
 
 procedure TfrmMain.SpeedButton2Click(Sender: TObject);
 var
   i: integer;
-  s: string;
-  i_pos: integer;
-  l_len: integer;
 begin
-  save4undo(ListBox1);
-
   if RadioButton1.Checked then
-    for i:=0 to ListBox1.Count - 1 do
-    begin
-      ListBox1.Items[i] := TrimLeft(ListBox1.Items[i]);
-    end;
+    for i:= 0 to SynEdit1.Lines.Count - 1 do
+      SynEdit1.Lines[i] := TrimLeft(SynEdit1.Lines[i]);
 
   if RadioButton2.Checked then
-    for i:=0 to ListBox1.Count - 1 do
-    begin
-      s := ListBox1.Items[i];
-      i_pos := PosExD(Edit1.Text, ListBox1.Items[i], SpinEdit1.Value);
-      l_len := length(ListBox1.Items[i]);
-
-      ListBox1.Items[i] := copy(ListBox1.Items[i],
-                            PosExD(Edit1.Text, ListBox1.Items[i], SpinEdit1.Value)+1,
-                            length(ListBox1.Items[i]));
-    end;
+    for i:= 0 to SynEdit1.Lines.Count - 1 do
+      SynEdit1.Lines[i] := copy(SynEdit1.Lines[i],
+                                PosExD(Edit1.Text, SynEdit1.Lines[i], SpinEdit1.Value)+1,
+                                Length(SynEdit1.Lines[i]));
 
   if RadioButton3.Checked then
-    for i := 0 to ListBox1.Items.Count-1 do
-      ListBox1.Items[i] := Copy(ListBox1.Items[i], 2, Length(ListBox1.Items[i]));
+    for i := 0 to SynEdit1.Lines.Count-1 do
+      SynEdit1.Lines[i] := Copy(SynEdit1.Lines[i], 2, Length(SynEdit1.Lines[i]));
 end;
 
 procedure TfrmMain.SpeedButton3Click(Sender: TObject);
@@ -509,10 +453,10 @@ var
   i: integer;
   s: string;
 begin
-  for i:=0 to ListBox1.Items.Count-1 do
+  for i:=0 to SynEdit1.Lines.Count-1 do
   begin
-    s := StringReplace(Edit2.Text, '$val$', ListBox1.Items[i],[rfReplaceAll, rfIgnoreCase]);
-    ListBox1.Items[i] := s + ListBox1.Items[i];
+    s := StringReplace(Edit2.Text, '$val$', SynEdit1.Lines[i],[rfReplaceAll, rfIgnoreCase]);
+    SynEdit1.Lines[i] := s + SynEdit1.Lines[i];
   end;
 end;
 
@@ -521,10 +465,10 @@ var
   i: integer;
   s: string;
 begin
-  for i:=0 to ListBox1.Items.Count-1 do
+  for i:=0 to SynEdit1.Lines.Count-1 do
   begin
-    s := StringReplace(Edit2.Text, '$val$', ListBox1.Items[i],[rfReplaceAll, rfIgnoreCase]);
-    ListBox1.Items[i] := ListBox1.Items[i] + s;
+    s := StringReplace(Edit2.Text, '$val$', SynEdit1.Lines[i],[rfReplaceAll, rfIgnoreCase]);
+    SynEdit1.Lines[i] := SynEdit1.Lines[i] + s;
   end;
 end;
 
@@ -533,17 +477,16 @@ begin
   Edit2.Text := Edit2.Text + '$val$';
 end;
 
+procedure TfrmMain.SynEdit1GutterClick(Sender: TObject; Button: TMouseButton; X,
+  Y, Line: Integer; Mark: TSynEditMark);
+begin
+  SynEdit1.ExecuteCommand(ecSelLineEnd, #0, nil);
+end;
+
 procedure TfrmMain.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   if TStrings_main <> nil then
     TStrings_main.Free;
-  if sl4undo1 <> nil then
-    sl4undo1.Free;
-end;
-
-procedure TfrmMain.FormShow(Sender: TObject);
-begin
-  Caption := 'String Acrobat v.'+version_num;
 end;
 
 procedure TfrmMain.tsColToStrHide(Sender: TObject);
@@ -565,17 +508,60 @@ begin
 end;
 
 procedure TfrmMain.ToolButton13Click(Sender: TObject);
-var
-  i: integer;
-begin
-  save4undo(ListBox1);
-  if ListBox1.SelCount = 0 then
-    for i := 0 to ListBox1.Items.Count-1 do
-      ListBox1.Items[i] := AnsiLowerCase(ListBox1.Items[i])
+begin // в нижний регистр
+  if SynEdit1.SelLength > 0 then
+    SynEdit1.SelText := AnsiLowerCase(SynEdit1.SelText)
   else
-    for i := 0 to ListBox1.Items.Count-1 do
-      if ListBox1.Selected[i] then
-        ListBox1.Items[i] := AnsiLowerCase(ListBox1.Items[i]);
+    SynEdit1.Lines.Text := AnsiLowerCase(SynEdit1.Lines.Text);
+end;
+
+procedure TfrmMain.ToolButton14Click(Sender: TObject);
+var
+  i,j: integer;
+  sl: TStringList;
+  iPos: integer;
+  s: string;
+  indx: integer;
+  l:integer;
+  sres: string;
+  sSep: string;
+begin
+  sSep := InputBox('Значения по колонкам','Разделитель',';');
+  sl := TstringList.Create;
+  for i:= 0 to SynEdit1.Lines.Count-1 do
+  begin
+    s := SynEdit1.Lines[i];
+    indx := 0;
+    repeat
+      iPos := PosExD(sSep, s, 1)-1;
+      l := Length(copy(s,1,iPos));
+
+      try
+        if (i = 0) or (l > strtoint(sl[indx])) then
+          sl[indx] := inttostr(l);
+      except
+        sl.Insert(indx,inttostr(l));
+      end;
+        //
+      indx := indx + 1;
+      s := copy(s, iPos+2, length(s));
+    until length(s) = 0;
+  end;
+
+  for i:= 0 to SynEdit1.Lines.Count-1 do
+  begin
+    s := SynEdit1.Lines[i];
+    indx := 0;
+    sres := '';
+    repeat
+      iPos := PosExD(sSep, s, 1)-1;
+      sres := sres + ' ' + copy(s, 1, iPos).PadRight(strtoint(sl[indx]));
+      indx := indx + 1;
+      s := copy(s, iPos+2, length(s));
+    until length(s) = 0;
+    SynEdit1.Lines[i] := sres;
+  end;
+  sl.Free;
 end;
 
 procedure TfrmMain.ToolButton16Click(Sender: TObject);
@@ -659,25 +645,23 @@ end;
 
 procedure TfrmMain.aSelectAllTextExecute(Sender: TObject);
 begin
-  ListBox1.SelectAll;
-  Clipboard.AsText := ListBox1.Items.Text;
+  SynEdit1.SelectAll;
+  Clipboard.AsText := SynEdit1.Lines.Text;
 end;
 
 procedure TfrmMain.aSelectAllTextUpdate(Sender: TObject);
 begin
-  aSelectAllText.Enabled := ListBox1.Count > 0;
+  aSelectAllText.Enabled := SynEdit1.Lines.Count > 0;
 end;
 
 procedure TfrmMain.aUndo4StrOperExecute(Sender: TObject);
 begin
-  ListBox1.Items.Clear;
-  ListBox1.Items.AddStrings(sl4undo1);
-  sl4undo1 := nil;
+  SynEdit1.Undo;
 end;
 
 procedure TfrmMain.aUndo4StrOperUpdate(Sender: TObject);
 begin
-  aUndo4StrOper.Enabled := sl4undo1 <> nil;
+  //SynEdit1.UnlockUndo;
 end;
 
 procedure TfrmMain.Edit1KeyPress(Sender: TObject; var Key: Char);

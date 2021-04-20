@@ -177,6 +177,24 @@ object frmMain: TfrmMain
               Style = tbsDropDown
               OnClick = ToolButton23Click
             end
+            object ToolButton6: TToolButton
+              Left = 302
+              Top = 0
+              Width = 8
+              Caption = 'ToolButton6'
+              ImageIndex = 4
+              Style = tbsSeparator
+            end
+            object ToolButton14: TToolButton
+              Left = 310
+              Top = 0
+              Hint = #1056#1072#1089#1090#1103#1085#1091#1090#1100' '#1090#1077#1082#1089#1090' '#1082#1086#1083#1086#1085#1082#1072#1084#1080' '#1087#1086' '#1088#1072#1079#1076#1077#1083#1080#1090#1077#1083#1102
+              Caption = 'ToolButton14'
+              ImageIndex = 9
+              ParentShowHint = False
+              ShowHint = True
+              OnClick = ToolButton14Click
+            end
           end
           object ToolBar2: TToolBar
             Left = 576
@@ -209,7 +227,7 @@ object frmMain: TfrmMain
             end
           end
         end
-        object ListBox1: TListBox
+        object SynEdit1: TSynEdit
           Left = 0
           Top = 35
           Width = 608
@@ -220,9 +238,23 @@ object frmMain: TfrmMain
           Font.Height = -13
           Font.Name = 'Courier New'
           Font.Style = []
-          MultiSelect = True
-          ParentFont = False
           TabOrder = 1
+          CodeFolding.GutterShapeSize = 11
+          CodeFolding.CollapsedLineColor = clGrayText
+          CodeFolding.FolderBarLinesColor = clGrayText
+          CodeFolding.IndentGuidesColor = clGray
+          CodeFolding.IndentGuides = True
+          CodeFolding.ShowCollapsedLine = False
+          CodeFolding.ShowHintMark = True
+          UseCodeFolding = False
+          Gutter.Font.Charset = DEFAULT_CHARSET
+          Gutter.Font.Color = clWindowText
+          Gutter.Font.Height = -11
+          Gutter.Font.Name = 'Courier New'
+          Gutter.Font.Style = []
+          Options = [eoAltSetsColumnMode, eoAutoIndent, eoDragDropEditing, eoEnhanceEndKey, eoGroupUndo, eoScrollPastEol, eoShowScrollHint, eoSmartTabDelete, eoSmartTabs, eoTabsToSpaces]
+          OnGutterClick = SynEdit1GutterClick
+          FontSmoothing = fsmNone
         end
       end
       object Panel2: TPanel
@@ -446,23 +478,11 @@ object frmMain: TfrmMain
                 Caption = #1053#1072' '#1086#1076#1080#1085' '#1089#1080#1084#1074#1086#1083
                 TabOrder = 3
               end
-              object CheckBox1: TCheckBox
-                Left = 18
-                Top = 165
-                Width = 151
-                Height = 17
-                Caption = #1044#1083#1103' '#1074#1099#1073#1088#1072#1085#1085#1099#1093' '#1079#1072#1087#1080#1089#1077#1081
-                TabOrder = 4
-              end
             end
           end
           object TabSheet2: TTabSheet
             Caption = #1042#1089#1090#1072#1074#1082#1072
             ImageIndex = 1
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             object Label6: TLabel
               Left = 12
               Top = 13
@@ -819,7 +839,7 @@ object frmMain: TfrmMain
             end
             object ComboBox1: TComboBox
               Left = 129
-              Top = 0
+              Top = 3
               Width = 160
               Height = 24
               Font.Charset = DEFAULT_CHARSET
@@ -906,13 +926,6 @@ object frmMain: TfrmMain
   object PopupMenu4: TPopupMenu
     Left = 700
     Top = 296
-    object N16: TMenuItem
-      Caption = #1059#1076#1072#1083#1080#1090#1100' '#1074#1099#1073#1088#1072#1085#1085#1099#1077' '#1101#1083#1077#1084#1077#1085#1090#1099
-      OnClick = N16Click
-    end
-    object N15: TMenuItem
-      Caption = '-'
-    end
     object N7: TMenuItem
       Caption = #1059#1076#1072#1083#1080#1090#1100' '#1076#1091#1073#1083#1080#1082#1072#1090#1099' ('#1089#1087#1080#1089#1086#1082' '#1073#1091#1076#1077#1090' '#1086#1090#1089#1086#1088#1090#1080#1088#1086#1074#1072#1085')'
       OnClick = N7Click
@@ -942,7 +955,7 @@ object frmMain: TfrmMain
     Left = 552
     Top = 192
     Bitmap = {
-      494C01010900A0009C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010A00A000B00018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000060000000480000000100200000000000006C
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -1810,16 +1823,16 @@ object frmMain: TfrmMain
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000424D3E000000000000003E000000
       2800000060000000480000000100010000000000600300000000000000000000
-      000000000000000000000000FFFFFF00FFFFFF000000000000000000FE000100
-      0000000000000000FE0001000000000000000000FE0001000000000000000000
-      FE0001000000000000000000FE0001000000000000000000FE00010000000000
-      00000000FE0001000000000000000000FE0001000000000000000000FE000100
-      0000000000000000FE0001000000000000000000FE0001000000000000000000
-      8000010000000000000000008000010000000000000000008000010000000000
-      000000008000010000000000000000008000FF0000000000000000008000FF00
-      00000000000000008000FF0000000000000000008000FF000000000000000000
-      8000FF0000000000000000008000FF0000000000000000008000FF0000000000
-      00000000FFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      000000000000000000000000FFFFFF00FFFFFFFFFFFF000000000000FE0001FF
+      FFFF000000000000FE0001FFFFFF000000000000FE0001FFFFFF000000000000
+      FE0001FFFFFF000000000000FE0001FFFFFF000000000000FE0001FFFFFF0000
+      00000000FE0001FDFF7F000000000000FE0001EEFEF7000000000000FE0001DE
+      FEFB000000000000FE0001BF7DFD000000000000FE0001010100000000000000
+      800001BFBBFD000000000000800001DFBBFB000000000000800001EFD7F70000
+      00000000800001FFD7FF0000000000008000FFFFEFFF0000000000008000FFFF
+      FFFF0000000000008000FFFFFFFF0000000000008000FFFFFFFF000000000000
+      8000FFFFFFFF0000000000008000FFFFFFFF0000000000008000FFFFFFFF0000
+      00000000FFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
       FFFF800FDFFFFFFF3FE003E01007DFFF8FFFFFFF3FE001C01003EFFF57FFFFFF
       1FE1F88F93F1F7FEDBFFFFFF9FC1FC9F93F9F9FDDDFFFFFF9FC9FC9F93F9FEFF
       DFFFFFFF8FC9FC8F93F1FF7FDFFFFFFFC009FCCF93F3FFBFDFC01FE1C019F8C7
