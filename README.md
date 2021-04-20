@@ -5,4 +5,4 @@
 > Windows
 
 ## Installation
-> No install request.
+> No install request. Portable version.
