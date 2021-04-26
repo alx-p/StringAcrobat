@@ -110,6 +110,10 @@ type
     SynEdit1: TSynEdit;
     ToolButton6: TToolButton;
     ToolButton14: TToolButton;
+    SpeedButton5: TSpeedButton;
+    TabSheet3: TTabSheet;
+    CheckBox1: TCheckBox;
+    CheckBox2: TCheckBox;
     procedure miAboutClick(Sender: TObject);
     procedure miExitClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -149,6 +153,9 @@ type
     procedure SynEdit1GutterClick(Sender: TObject; Button: TMouseButton; X, Y,
       Line: Integer; Mark: TSynEditMark);
     procedure ToolButton14Click(Sender: TObject);
+    procedure SpeedButton5Click(Sender: TObject);
+    procedure CheckBox1Click(Sender: TObject);
+    procedure CheckBox2Click(Sender: TObject);
   private
     TStrings_main: TStrings;
 //    function SearchString(const FindStr, SourceString: string; Num: Integer): Integer;
@@ -162,7 +169,7 @@ var
   frmMain: TfrmMain;
 
 const
-  version_num: string = '2.1';
+  version_num: string = '2.2';
 
 implementation
 
@@ -170,12 +177,12 @@ implementation
 
 procedure TfrmMain.FormShow(Sender: TObject);
 begin
-  Caption := 'String Acrobat v.'+version_num;
+  Caption := 'String Transformer v.'+version_num;
 end;
 
 procedure TfrmMain.miAboutClick(Sender: TObject);
 begin
-  MessageDlg('String Acrobat'+#13+#10+'Версия '+version_num+#13+#10+''+#13+#10+'2011-2021г. Алексей Потапович', mtInformation, [mbOK], 0);
+  MessageDlg('String Transformer'+#13+#10+'Версия '+version_num+#13+#10+''+#13+#10+'2011-2021г. Алексей Потапович', mtInformation, [mbOK], 0);
 end;
 
 procedure TfrmMain.ToolButton21Click(Sender: TObject);
@@ -453,7 +460,7 @@ var
   i: integer;
   s: string;
 begin
-  for i:=0 to SynEdit1.Lines.Count-1 do
+  for i := 0 to SynEdit1.Lines.Count - 1 do
   begin
     s := StringReplace(Edit2.Text, '$val$', SynEdit1.Lines[i],[rfReplaceAll, rfIgnoreCase]);
     SynEdit1.Lines[i] := s + SynEdit1.Lines[i];
@@ -469,6 +476,19 @@ begin
   begin
     s := StringReplace(Edit2.Text, '$val$', SynEdit1.Lines[i],[rfReplaceAll, rfIgnoreCase]);
     SynEdit1.Lines[i] := SynEdit1.Lines[i] + s;
+  end;
+end;
+
+procedure TfrmMain.SpeedButton5Click(Sender: TObject);
+var
+  i, p: integer;
+  s: string;
+begin
+  p := SynEdit1.SelStart;
+  for i := 0 to SynEdit1.Lines.Count - 1 do
+  begin
+    s := StringReplace(Edit2.Text, '$val$', SynEdit1.Lines[i],[rfReplaceAll, rfIgnoreCase]);
+    SynEdit1.Lines[i] := copy(SynEdit1.Lines[i], 0, p) + s + copy(SynEdit1.Lines[i], p+1, length(SynEdit1.Lines[i]));
   end;
 end;
 
@@ -662,6 +682,22 @@ end;
 procedure TfrmMain.aUndo4StrOperUpdate(Sender: TObject);
 begin
   //SynEdit1.UnlockUndo;
+end;
+
+procedure TfrmMain.CheckBox1Click(Sender: TObject);
+begin
+  if CheckBox1.Checked then
+    SynEdit1.Options := SynEdit1.Options + [eoShowSpecialChars]
+  else
+    SynEdit1.Options := SynEdit1.Options - [eoShowSpecialChars];
+end;
+
+procedure TfrmMain.CheckBox2Click(Sender: TObject);
+begin
+  if CheckBox2.Checked then
+    SynEdit1.Options := SynEdit1.Options + [eoAltSetsColumnMode]
+  else
+    SynEdit1.Options := SynEdit1.Options - [eoAltSetsColumnMode];
 end;
 
 procedure TfrmMain.Edit1KeyPress(Sender: TObject; var Key: Char);

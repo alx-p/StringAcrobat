@@ -1,7 +1,7 @@
 object frmMain: TfrmMain
   Left = 310
   Top = 295
-  Caption = 'String Acrobat v.version_num'
+  Caption = 'String Transformer v.version_num'
   ClientHeight = 543
   ClientWidth = 824
   Color = clBtnFace
@@ -255,6 +255,8 @@ object frmMain: TfrmMain
           Options = [eoAltSetsColumnMode, eoAutoIndent, eoDragDropEditing, eoEnhanceEndKey, eoGroupUndo, eoScrollPastEol, eoShowScrollHint, eoSmartTabDelete, eoSmartTabs, eoTabsToSpaces]
           OnGutterClick = SynEdit1GutterClick
           FontSmoothing = fsmNone
+          ExplicitLeft = -2
+          ExplicitTop = 33
         end
       end
       object Panel2: TPanel
@@ -279,12 +281,12 @@ object frmMain: TfrmMain
               Left = 3
               Top = 3
               Width = 191
-              Height = 234
+              Height = 214
               Caption = #1057#1080#1084#1074#1086#1083#1099' '#1089#1083#1077#1074#1072'/'#1089#1087#1088#1072#1074#1072
               TabOrder = 0
               object SpeedButton1: TSpeedButton
                 Left = 140
-                Top = 188
+                Top = 164
                 Width = 39
                 Height = 37
                 Hint = #1059#1076#1072#1083#1080#1090#1100' '#1089#1087#1088#1072#1074#1072
@@ -388,7 +390,7 @@ object frmMain: TfrmMain
               end
               object SpeedButton2: TSpeedButton
                 Left = 12
-                Top = 188
+                Top = 164
                 Width = 39
                 Height = 37
                 Hint = #1059#1076#1072#1083#1080#1090#1100' '#1089#1083#1077#1074#1072
@@ -495,7 +497,16 @@ object frmMain: TfrmMain
               Top = 88
               Width = 40
               Height = 40
+              Hint = #1044#1086#1073#1072#1074#1080#1090#1100' '#1089#1090#1088#1086#1082#1091' '#1089#1083#1077#1074#1072
               Caption = '>'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -16
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
               OnClick = SpeedButton3Click
             end
             object SpeedButton4: TSpeedButton
@@ -503,7 +514,16 @@ object frmMain: TfrmMain
               Top = 88
               Width = 40
               Height = 40
+              Hint = #1044#1086#1073#1072#1074#1080#1090#1100' '#1089#1090#1088#1086#1082#1091' '#1089#1087#1088#1072#1074#1072
               Caption = '<'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -16
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
               OnClick = SpeedButton4Click
             end
             object Label7: TLabel
@@ -533,12 +553,54 @@ object frmMain: TfrmMain
               ParentFont = False
               OnClick = SpeedButton6Click
             end
+            object SpeedButton5: TSpeedButton
+              Left = 80
+              Top = 88
+              Width = 40
+              Height = 40
+              Hint = #1044#1086#1073#1072#1074#1080#1090#1100' '#1089#1090#1088#1086#1082#1091' '#1074' '#1087#1086#1079#1080#1094#1080#1102' '#1082#1091#1088#1089#1086#1088#1072
+              Caption = '^'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -27
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              OnClick = SpeedButton5Click
+            end
             object Edit2: TEdit
               Left = 11
               Top = 32
               Width = 174
               Height = 21
               TabOrder = 0
+            end
+          end
+          object TabSheet3: TTabSheet
+            Caption = #1045#1097#1077
+            ImageIndex = 2
+            object CheckBox1: TCheckBox
+              Left = 15
+              Top = 11
+              Width = 162
+              Height = 17
+              Caption = #1055#1086#1082#1072#1079#1072#1090#1100' '#1074#1089#1077' '#1089#1080#1084#1074#1086#1083#1099
+              TabOrder = 0
+              OnClick = CheckBox1Click
+            end
+            object CheckBox2: TCheckBox
+              Left = 15
+              Top = 34
+              Width = 170
+              Height = 39
+              Caption = #1042#1077#1088#1090#1080#1082#1072#1083#1100#1085#1086#1077' '#1074#1099#1076#1077#1083#1077#1085#1080#1077'     ('#1089' '#1079#1072#1078#1072#1090#1099#1084' ALT)'
+              Checked = True
+              State = cbChecked
+              TabOrder = 1
+              WordWrap = True
+              OnClick = CheckBox2Click
             end
           end
         end
@@ -839,7 +901,7 @@ object frmMain: TfrmMain
             end
             object ComboBox1: TComboBox
               Left = 129
-              Top = 3
+              Top = 0
               Width = 160
               Height = 24
               Font.Charset = DEFAULT_CHARSET
@@ -955,7 +1017,7 @@ object frmMain: TfrmMain
     Left = 552
     Top = 192
     Bitmap = {
-      494C01010A00A000B00018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010A00A000B80018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000060000000480000000100200000000000006C
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
