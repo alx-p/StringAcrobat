@@ -5,8 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ExtCtrls, ToolWin, ComCtrls, Menus, Buttons, StdCtrls, Clipbrd,
-  ImgList, ActnList, System.Actions, System.ImageList, Vcl.Samples.Spin,
-  SynEdit, SynEditKeyCmds;
+  ImgList, ActnList, System.Actions, System.ImageList, SynEdit, SynEditKeyCmds;
 
 type
   TfrmMain = class(TForm)
@@ -49,13 +48,6 @@ type
     lbTextColumn_in: TListBox;
     ToolButton3: TToolButton;
     ToolButton4: TToolButton;
-    PopupMenu4: TPopupMenu;
-    N7: TMenuItem;
-    N8: TMenuItem;
-    N9: TMenuItem;
-    N10: TMenuItem;
-    N11: TMenuItem;
-    N12: TMenuItem;
     N13: TMenuItem;
     N14: TMenuItem;
     aSelectAllText: TAction;
@@ -80,16 +72,11 @@ type
     SpeedButton1: TSpeedButton;
     SpeedButton2: TSpeedButton;
     RadioButton1: TRadioButton;
-    GroupBox2: TGroupBox;
-    Label3: TLabel;
-    Label4: TLabel;
-    SpinEdit1: TSpinEdit;
     Edit1: TEdit;
     RadioButton2: TRadioButton;
     ToolButton29: TToolButton;
     ToolButton30: TToolButton;
     aUndo4StrOper: TAction;
-    TabSheet2: TTabSheet;
     Label6: TLabel;
     Edit2: TEdit;
     SpeedButton3: TSpeedButton;
@@ -97,23 +84,28 @@ type
     ToolButton10: TToolButton;
     RadioButton3: TRadioButton;
     ToolButton12: TToolButton;
-    Label7: TLabel;
     ToolButton5: TToolButton;
     ToolButton21: TToolButton;
     SpeedButton6: TSpeedButton;
     ToolButton22: TToolButton;
-    ToolButton23: TToolButton;
     ImageList24: TImageList;
     PopupMenu_sort: TPopupMenu;
     N3: TMenuItem;
     N4: TMenuItem;
     SynEdit1: TSynEdit;
-    ToolButton6: TToolButton;
     ToolButton14: TToolButton;
     SpeedButton5: TSpeedButton;
     TabSheet3: TTabSheet;
     CheckBox1: TCheckBox;
     CheckBox2: TCheckBox;
+    SpeedButton7: TSpeedButton;
+    miOpenFileDialog: TMenuItem;
+    N5: TMenuItem;
+    GroupBox2: TGroupBox;
+    CheckBox3: TCheckBox;
+    GroupBox3: TGroupBox;
+    RadioButton4: TRadioButton;
+    RadioButton5: TRadioButton;
     procedure miAboutClick(Sender: TObject);
     procedure miExitClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -125,10 +117,6 @@ type
     procedure aCopyResultToBufferUpdate(Sender: TObject);
     procedure ToolButton19Click(Sender: TObject);
     procedure ToolButton3Click(Sender: TObject);
-    procedure N7Click(Sender: TObject);
-    procedure N9Click(Sender: TObject);
-    procedure N11Click(Sender: TObject);
-    procedure N12Click(Sender: TObject);
     procedure ToolButton8Click(Sender: TObject);
     procedure ToolButton13Click(Sender: TObject);
     procedure aSelectAllTextExecute(Sender: TObject);
@@ -146,7 +134,6 @@ type
     procedure ToolButton12Click(Sender: TObject);
     procedure ToolButton21Click(Sender: TObject);
     procedure SpeedButton6Click(Sender: TObject);
-    procedure ToolButton23Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
     procedure Edit1KeyPress(Sender: TObject; var Key: Char);
@@ -156,6 +143,9 @@ type
     procedure SpeedButton5Click(Sender: TObject);
     procedure CheckBox1Click(Sender: TObject);
     procedure CheckBox2Click(Sender: TObject);
+    procedure SpeedButton7Click(Sender: TObject);
+    procedure miOpenFileDialogClick(Sender: TObject);
+    procedure CheckBox3Click(Sender: TObject);
   private
     TStrings_main: TStrings;
 //    function SearchString(const FindStr, SourceString: string; Num: Integer): Integer;
@@ -169,7 +159,7 @@ var
   frmMain: TfrmMain;
 
 const
-  version_num: string = '2.2';
+  version_num: string = '2.3';
 
 implementation
 
@@ -182,7 +172,7 @@ end;
 
 procedure TfrmMain.miAboutClick(Sender: TObject);
 begin
-  MessageDlg('String Transformer'+#13+#10+'Версия '+version_num+#13+#10+''+#13+#10+'2011-2021г. Алексей Потапович', mtInformation, [mbOK], 0);
+  MessageDlg('String Transformer'+#13#10+'Версия '+version_num+#13#10#13#10+'itwh'+#46+'ru'+#13#10+'dev'+#64+'itwh'+#46+'ru'+#13#10#13#10+'2011-2021г. Алексей Потапович', mtInformation, [mbOK], 0);
 end;
 
 procedure TfrmMain.ToolButton21Click(Sender: TObject);
@@ -191,37 +181,28 @@ begin
   mSTCto.CopyToClipboard;
 end;
 
-procedure TfrmMain.ToolButton23Click(Sender: TObject);
-begin
-  ToolButton23.CheckMenuDropdown;
-end;
-
 procedure TfrmMain.ToolButton30Click(Sender: TObject);
 var
   i: integer;
-  sl_tmp: TStrings;
+  sl: TStringList;
 begin
   if not PopupMenu3.Items[0].Checked then
-    synedit1.Lines.Clear;
+    SynEdit1.Lines.Clear;
 
   try
-    sl_tmp := TStringList.Create();
-    if TStrings_main = nil then
-      TStrings_main := TStringList.Create();
-    sl_tmp.Text := Trim((Clipboard().AsText));
-    TStrings_main.Clear;
-    TStrings_main.AddStrings(sl_tmp);
+    sl := TStringList.Create();
+    sl.Text := Trim((Clipboard().AsText));
 
-    if PopupMenu3.Items[2].Checked then
-      for i := 0 to TStrings_main.Count-1 do
-        TStrings_main[i] := Trim(TStrings_main[i]);
+    if PopupMenu3.Items[4].Checked then
+      for i := 0 to sl.Count-1 do
+        sl[i] := Trim(sl[i]);
 
-    SynEdit1.Lines.AddStrings(TStrings_main);
-
+    SynEdit1.Lines.AddStrings(sl);
     sbMain.Panels[0].Text := 'Кол-во элементов в списке: ' + IntToStr(SynEdit1.Lines.Count);
-
-    sl_tmp.Free;
+    sl.Free;
   except
+    if sl <> nil then
+      sl.Free;
     MessageDlg('Ошибка при вставке текста из буфера обмена', mtError, [mbOK], 0);
   end;
 end;
@@ -278,20 +259,15 @@ begin
   Close;
 end;
 
-procedure TfrmMain.N11Click(Sender: TObject);
+procedure TfrmMain.miOpenFileDialogClick(Sender: TObject);
 var
-  i: integer;
+  OpenDlg: TOpenDialog; // Переделать на TOpenTextFileDialog;
 begin
-  for i := 0 to SynEdit1.Lines.Count-1 do
-    SynEdit1.Lines[i] := Copy(SynEdit1.Lines[i], 2, length(SynEdit1.Lines[i]));
-end;
-
-procedure TfrmMain.N12Click(Sender: TObject);
-var
-  i: integer;
-begin
-  for i := 0 to SynEdit1.Lines.Count-1 do
-    SynEdit1.Lines[i] := Copy(SynEdit1.Lines[i], 1, length(SynEdit1.Lines[i])-1);
+  OpenDlg := TOpenDialog.Create(Self);
+  OpenDlg.Filter := 'Text files (*.txt)|*.TXT|Any file (*.*)|*.*';
+  if OpenDlg.Execute then
+    SynEdit1.Lines.LoadFromFile(OpenDlg.FileName);
+  OpenDlg.Free;
 end;
 
 procedure TfrmMain.N3Click(Sender: TObject);
@@ -318,28 +294,6 @@ begin // сортировка по убыванию
   for i := sl.Count-1 downto 0 do
     SynEdit1.Lines.Add(sl[i]);
   sl.Free;
-end;
-
-procedure TfrmMain.N7Click(Sender: TObject);
-var
-  sl: TStringList;
-begin // удаление дубликатов
-  sl := TStringList.Create;
-  sl.Sorted := True;
-  sl.Duplicates := dupIgnore;
-  sl.Assign(SynEdit1.Lines);
-  SynEdit1.Lines.Clear;
-  SynEdit1.Lines.Assign(sl);
-  sl.Free;
-  sbMain.Panels[0].Text := 'Кол-во элементов в списке: ' + IntToStr(SynEdit1.Lines.Count);
-end;
-
-procedure TfrmMain.N9Click(Sender: TObject);
-var
-  i: integer;
-begin
-  for i := 0 to SynEdit1.Lines.Count-1 do
-    SynEdit1.Lines[i] := Trim(SynEdit1.Lines[i]);
 end;
 
 function TfrmMain.PosExD(const FindStr, SourceStr: string; Num: Integer): Integer;
@@ -382,7 +336,10 @@ begin
     end;
   end;
 
-  Result := l_length_source_str+1;
+  if l_found_cnt = 0 then
+    Result := 0
+  else
+    Result := l_length_source_str+1;
 end;
 
 {
@@ -419,7 +376,7 @@ end;
 
 procedure TfrmMain.SpeedButton1Click(Sender: TObject);
 var
-  i: integer;
+  i, iPos: integer;
 begin
   if RadioButton1.Checked then
     for i := 0 to SynEdit1.Lines.Count-1 do
@@ -427,9 +384,11 @@ begin
 
   if RadioButton2.Checked then
     for i := 0 to SynEdit1.Lines.Count-1 do
-      SynEdit1.Lines[i] := Copy(SynEdit1.Lines[i], 1, PosExD(Edit1.Text,
-                                                             SynEdit1.Lines[i],
-                                                             SpinEdit1.Value*-1)-1);
+    begin
+      iPos := PosExD(Edit1.Text, SynEdit1.Lines[i], -1);
+      if iPos <> 0 then
+        SynEdit1.Lines[i] := Copy(SynEdit1.Lines[i], 1, iPos-1);
+    end;
 
   if RadioButton3.Checked then
     for i := 0 to SynEdit1.Lines.Count-1 do
@@ -438,7 +397,7 @@ end;
 
 procedure TfrmMain.SpeedButton2Click(Sender: TObject);
 var
-  i: integer;
+  i, iPos: integer;
 begin
   if RadioButton1.Checked then
     for i:= 0 to SynEdit1.Lines.Count - 1 do
@@ -446,9 +405,13 @@ begin
 
   if RadioButton2.Checked then
     for i:= 0 to SynEdit1.Lines.Count - 1 do
-      SynEdit1.Lines[i] := copy(SynEdit1.Lines[i],
-                                PosExD(Edit1.Text, SynEdit1.Lines[i], SpinEdit1.Value)+1,
-                                Length(SynEdit1.Lines[i]));
+    begin
+      iPos := PosExD(Edit1.Text, SynEdit1.Lines[i], 1);
+      if iPos <> 0 then
+        SynEdit1.Lines[i] := copy(SynEdit1.Lines[i],
+                                  iPos + 1,
+                                  Length(SynEdit1.Lines[i]));
+    end;
 
   if RadioButton3.Checked then
     for i := 0 to SynEdit1.Lines.Count-1 do
@@ -497,6 +460,46 @@ begin
   Edit2.Text := Edit2.Text + '$val$';
 end;
 
+procedure TfrmMain.SpeedButton7Click(Sender: TObject);
+var
+  sl: TStringList;
+  sl_org: TStringList;
+  i, iDel: integer;
+begin // удаление дубликатов
+  if RadioButton4.Checked then
+  begin
+    sl := TStringList.Create;
+    sl.Sorted := True;
+    sl.Duplicates := dupIgnore;
+    sl.Assign(SynEdit1.Lines);
+    sl_org := TStringList.Create;
+    sl_org.Assign(SynEdit1.Lines);
+    SynEdit1.Lines.Clear;
+    for i := 0 to sl_org.Count - 1 do
+    begin
+      iDel := sl.IndexOf(sl_org[i]);
+      if iDel <> -1 then
+      begin
+        sl.Delete(iDel);
+        SynEdit1.Lines.Append(sl_org[i]);
+      end;
+    end;
+
+    sl.Free;
+    sl_org.Free;
+    sbMain.Panels[0].Text := 'Кол-во элементов в списке: ' + IntToStr(SynEdit1.Lines.Count);
+  end;
+
+  if RadioButton5.Checked then
+  begin
+    for i:=SynEdit1.Lines.Count-1 downto 0 do
+      if Trim(SynEdit1.Lines[i]) = '' then
+        SynEdit1.Lines.Delete(i);
+//      else
+  //      SynEdit1.Lines[i] := TrimLeft(SynEdit1.Lines[i]);
+  end;
+end;
+
 procedure TfrmMain.SynEdit1GutterClick(Sender: TObject; Button: TMouseButton; X,
   Y, Line: Integer; Mark: TSynEditMark);
 begin
@@ -537,35 +540,39 @@ end;
 
 procedure TfrmMain.ToolButton14Click(Sender: TObject);
 var
-  i,j: integer;
+  i: integer;
   sl: TStringList;
   iPos: integer;
   s: string;
   indx: integer;
-  l:integer;
+  len:integer;
   sres: string;
   sSep: string;
 begin
   sSep := InputBox('Значения по колонкам','Разделитель',';');
   sl := TstringList.Create;
+
   for i:= 0 to SynEdit1.Lines.Count-1 do
   begin
     s := SynEdit1.Lines[i];
     indx := 0;
     repeat
-      iPos := PosExD(sSep, s, 1)-1;
-      l := Length(copy(s,1,iPos));
+      iPos := PosExD(sSep, s, 1);
+      if iPos = 0 then
+        iPos := length(s);
+
+      len := Length(copy(s,1,iPos));
 
       try
-        if (i = 0) or (l > strtoint(sl[indx])) then
-          sl[indx] := inttostr(l);
+        if (i = 0) or (len > StrToInt(sl[indx])) then
+          sl[indx] := IntToStr(len);
       except
-        sl.Insert(indx,inttostr(l));
+        sl.Insert(indx, IntToStr(len));
       end;
-        //
+      s := copy(s, iPos+1, length(s));
       indx := indx + 1;
-      s := copy(s, iPos+2, length(s));
-    until length(s) = 0;
+
+    until (length(s) = 0) or (iPos = 0);
   end;
 
   for i:= 0 to SynEdit1.Lines.Count-1 do
@@ -574,11 +581,18 @@ begin
     indx := 0;
     sres := '';
     repeat
-      iPos := PosExD(sSep, s, 1)-1;
-      sres := sres + ' ' + copy(s, 1, iPos).PadRight(strtoint(sl[indx]));
+      iPos := PosExD(sSep, s, 1);
+      if iPos = 0 then
+        iPos := Length(s);
+
+      if indx = 0 then
+        sres := sres + copy(s, 0, iPos).PadRight(StrToInt(sl[indx]))
+      else
+        sres := sres + ' ' + copy(s, 0, iPos).PadRight(StrToInt(sl[indx]));
       indx := indx + 1;
-      s := copy(s, iPos+2, length(s));
-    until length(s) = 0;
+      s := copy(s, iPos+1, length(s));
+
+    until (length(s) = 0) or (iPos = 0);
     SynEdit1.Lines[i] := sres;
   end;
   sl.Free;
@@ -601,13 +615,13 @@ begin
     1: s_del := [';'];
     2: s_del := [':'];
     3: s_del := [' '];
-    else
+    else //s_del := [ComboBox1.Text];
     begin
       ShowMessage('Необходимо выбрать разделитель');
       Exit;
     end;
   end;
-  GetWords(S, mSTCto.Lines, s_del); //[',', ';', ':', ' ']);
+  GetWords(S, mSTCto.Lines, s_del);
 end;
 
 procedure TfrmMain.ToolButton18Click(Sender: TObject);
@@ -671,7 +685,7 @@ end;
 
 procedure TfrmMain.aSelectAllTextUpdate(Sender: TObject);
 begin
-  aSelectAllText.Enabled := SynEdit1.Lines.Count > 0;
+//  aSelectAllText.Enabled := SynEdit1.Lines.Count > 0;
 end;
 
 procedure TfrmMain.aUndo4StrOperExecute(Sender: TObject);
@@ -698,6 +712,11 @@ begin
     SynEdit1.Options := SynEdit1.Options + [eoAltSetsColumnMode]
   else
     SynEdit1.Options := SynEdit1.Options - [eoAltSetsColumnMode];
+end;
+
+procedure TfrmMain.CheckBox3Click(Sender: TObject);
+begin
+  SynEdit1.Gutter.ShowLineNumbers := CheckBox3.Checked;
 end;
 
 procedure TfrmMain.Edit1KeyPress(Sender: TObject; var Key: Char);
