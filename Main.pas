@@ -96,7 +96,6 @@ type
     ToolButton14: TToolButton;
     SpeedButton5: TSpeedButton;
     TabSheet3: TTabSheet;
-    CheckBox1: TCheckBox;
     CheckBox2: TCheckBox;
     SpeedButton7: TSpeedButton;
     miOpenFileDialog: TMenuItem;
@@ -106,6 +105,10 @@ type
     GroupBox3: TGroupBox;
     RadioButton4: TRadioButton;
     RadioButton5: TRadioButton;
+    RadioButton6: TRadioButton;
+    Edit3: TEdit;
+    CheckBox4: TCheckBox;
+    ToolButton6: TToolButton;
     procedure miAboutClick(Sender: TObject);
     procedure miExitClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -141,11 +144,11 @@ type
       Line: Integer; Mark: TSynEditMark);
     procedure ToolButton14Click(Sender: TObject);
     procedure SpeedButton5Click(Sender: TObject);
-    procedure CheckBox1Click(Sender: TObject);
     procedure CheckBox2Click(Sender: TObject);
     procedure SpeedButton7Click(Sender: TObject);
     procedure miOpenFileDialogClick(Sender: TObject);
     procedure CheckBox3Click(Sender: TObject);
+    procedure ToolButton6Click(Sender: TObject);
   private
     TStrings_main: TStrings;
 //    function SearchString(const FindStr, SourceString: string; Num: Integer): Integer;
@@ -159,7 +162,7 @@ var
   frmMain: TfrmMain;
 
 const
-  version_num: string = '2.3';
+  version_num: string = '2.4';
 
 implementation
 
@@ -246,6 +249,14 @@ begin
   Memo1.Lines.Append(Trim(s));
 end;
 
+procedure TfrmMain.ToolButton6Click(Sender: TObject);
+begin
+  if ToolButton6.Down then
+    SynEdit1.Options := SynEdit1.Options + [eoShowSpecialChars]
+  else
+    SynEdit1.Options := SynEdit1.Options - [eoShowSpecialChars];
+end;
+
 procedure TfrmMain.ToolButton8Click(Sender: TObject);
 begin // в верхний регистр
   if SynEdit1.SelLength > 0 then
@@ -268,6 +279,7 @@ begin
   if OpenDlg.Execute then
     SynEdit1.Lines.LoadFromFile(OpenDlg.FileName);
   OpenDlg.Free;
+  sbMain.Panels[0].Text := 'Кол-во элементов в списке: ' + IntToStr(SynEdit1.Lines.Count);
 end;
 
 procedure TfrmMain.N3Click(Sender: TObject);
@@ -495,8 +507,21 @@ begin // удаление дубликатов
     for i:=SynEdit1.Lines.Count-1 downto 0 do
       if Trim(SynEdit1.Lines[i]) = '' then
         SynEdit1.Lines.Delete(i);
-//      else
-  //      SynEdit1.Lines[i] := TrimLeft(SynEdit1.Lines[i]);
+  end;
+
+  if RadioButton6.Checked then
+  begin
+    for i:=SynEdit1.Lines.Count-1 downto 0 do
+      if not CheckBox4.Checked then
+      begin
+        if Pos(Edit3.Text, SynEdit1.Lines[i]) > 0 then
+          SynEdit1.Lines.Delete(i);
+      end
+      else
+      begin
+        if Pos(Edit3.Text, SynEdit1.Lines[i]) = 0 then
+          SynEdit1.Lines.Delete(i);
+      end;
   end;
 end;
 
@@ -559,7 +584,7 @@ begin
     repeat
       iPos := PosExD(sSep, s, 1);
       if iPos = 0 then
-        iPos := length(s);
+        iPos := Length(s);
 
       len := Length(copy(s,1,iPos));
 
@@ -696,14 +721,6 @@ end;
 procedure TfrmMain.aUndo4StrOperUpdate(Sender: TObject);
 begin
   //SynEdit1.UnlockUndo;
-end;
-
-procedure TfrmMain.CheckBox1Click(Sender: TObject);
-begin
-  if CheckBox1.Checked then
-    SynEdit1.Options := SynEdit1.Options + [eoShowSpecialChars]
-  else
-    SynEdit1.Options := SynEdit1.Options - [eoShowSpecialChars];
 end;
 
 procedure TfrmMain.CheckBox2Click(Sender: TObject);
