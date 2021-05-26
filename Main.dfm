@@ -2,8 +2,8 @@ object frmMain: TfrmMain
   Left = 310
   Top = 295
   Caption = 'String Transformer v.version_num'
-  ClientHeight = 543
-  ClientWidth = 824
+  ClientHeight = 548
+  ClientWidth = 931
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,268 +18,427 @@ object frmMain: TfrmMain
   TextHeight = 13
   object sbMain: TStatusBar
     Left = 0
-    Top = 524
-    Width = 824
+    Top = 529
+    Width = 931
     Height = 19
     Panels = <
       item
         Text = #1050#1086#1083'-'#1074#1086' '#1101#1083#1077#1084#1077#1085#1090#1086#1074' '#1074' '#1089#1087#1080#1089#1082#1077': 0'
-        Width = 190
+        Width = 210
       end
       item
         Width = 50
       end>
   end
-  object PageControl1: TPageControl
+  object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 824
-    Height = 524
-    ActivePage = tsCountLetter
+    Width = 931
+    Height = 529
     Align = alClient
+    BevelOuter = bvNone
     TabOrder = 1
-    object tsCountLetter: TTabSheet
-      Caption = #1057#1090#1088#1086#1082#1086#1074#1099#1077' '#1086#1087#1077#1088#1072#1094#1080#1080
-      ImageIndex = 2
-      object Panel11: TPanel
+    object Panel11: TPanel
+      Left = 0
+      Top = 0
+      Width = 683
+      Height = 529
+      Align = alClient
+      BevelOuter = bvNone
+      TabOrder = 0
+      object Panel4: TPanel
         Left = 0
         Top = 0
-        Width = 584
-        Height = 496
-        Align = alClient
+        Width = 683
+        Height = 35
+        Align = alTop
         BevelOuter = bvNone
         TabOrder = 0
-        object Panel4: TPanel
+        object ToolBar3: TToolBar
           Left = 0
-          Top = 0
-          Width = 584
-          Height = 35
-          Align = alTop
-          BevelOuter = bvNone
+          Top = 1
+          Width = 417
+          Height = 30
+          Align = alNone
+          ButtonHeight = 30
+          ButtonWidth = 31
+          Caption = 'ToolBar3'
+          Images = ImageList24
           TabOrder = 0
-          object ToolBar3: TToolBar
+          object ToolButton30: TToolButton
             Left = 0
-            Top = 1
-            Width = 417
-            Height = 30
-            Align = alNone
-            ButtonHeight = 30
-            ButtonWidth = 31
-            Caption = 'ToolBar3'
-            Images = ImageList24
+            Top = 0
+            Hint = #1042#1089#1090#1072#1074#1080#1090#1100' '#1080#1079' '#1073#1091#1092#1077#1088#1072
+            Caption = 'ToolButton30'
+            DropdownMenu = PopupMenu3
+            ImageIndex = 0
+            ParentShowHint = False
+            ShowHint = True
+            Style = tbsDropDown
+            OnClick = ToolButton30Click
+          end
+          object ToolButton29: TToolButton
+            Left = 46
+            Top = 0
+            Width = 8
+            Caption = 'ToolButton29'
+            ImageIndex = 10
+            Style = tbsSeparator
+          end
+          object ToolButton27: TToolButton
+            Left = 54
+            Top = 0
+            Hint = #1042#1099#1076#1077#1083#1080#1090#1100' '#1074#1077#1089#1100' '#1090#1077#1082#1089#1090' '#1080' '#1089#1082#1086#1087#1080#1088#1086#1074#1082#1072#1090#1100' '#1074' '#1073#1091#1092#1077#1088
+            Action = aSelectAllText
+            ParentShowHint = False
+            ShowHint = True
+          end
+          object ToolButton2: TToolButton
+            Left = 85
+            Top = 0
+            Width = 8
+            Caption = 'ToolButton2'
+            ImageIndex = 7
+            Style = tbsSeparator
+          end
+          object ToolButton8: TToolButton
+            Left = 93
+            Top = 0
+            Hint = #1042' '#1074#1077#1088#1093#1085#1080#1081' '#1088#1077#1075#1080#1089#1090#1088
+            Caption = 'ToolButton8'
+            ImageIndex = 4
+            ParentShowHint = False
+            ShowHint = True
+            OnClick = ToolButton8Click
+          end
+          object ToolButton13: TToolButton
+            Left = 124
+            Top = 0
+            Hint = #1042' '#1085#1080#1078#1085#1080#1081' '#1088#1077#1075#1080#1089#1090#1088
+            Caption = 'ToolButton13'
+            ImageIndex = 5
+            ParentShowHint = False
+            ShowHint = True
+            OnClick = ToolButton13Click
+          end
+          object ToolButton9: TToolButton
+            Left = 155
+            Top = 0
+            Width = 8
+            Caption = 'ToolButton9'
+            ImageIndex = 9
+            Style = tbsSeparator
+          end
+          object ToolButton12: TToolButton
+            Left = 163
+            Top = 0
+            Hint = #1057#1086#1088#1090#1080#1088#1086#1074#1082#1072' '#1089#1087#1080#1089#1082#1072
+            Caption = 'ToolButton12'
+            DropdownMenu = PopupMenu_sort
+            ImageIndex = 6
+            Style = tbsDropDown
+            OnClick = ToolButton12Click
+          end
+          object ToolButton22: TToolButton
+            Left = 209
+            Top = 0
+            Width = 8
+            Caption = 'ToolButton22'
+            ImageIndex = 4
+            Style = tbsSeparator
+          end
+          object ToolButton6: TToolButton
+            Left = 217
+            Top = 0
+            Hint = #1054#1090#1086#1073#1088#1072#1078#1072#1090#1100' '#1074#1089#1077' '#1089#1080#1084#1074#1086#1083#1099
+            Caption = 'ToolButton6'
+            ImageIndex = 11
+            ParentShowHint = False
+            ShowHint = True
+            Style = tbsCheck
+            OnClick = ToolButton6Click
+          end
+        end
+        object ToolBar2: TToolBar
+          Left = 651
+          Top = 0
+          Width = 32
+          Height = 35
+          Align = alRight
+          ButtonHeight = 30
+          ButtonWidth = 31
+          Caption = 'ToolBar2'
+          Images = ImageList24
+          TabOrder = 1
+          object ToolButton11: TToolButton
+            Left = 0
+            Top = 0
+            Caption = 'ToolButton11'
+            Down = True
+            ImageIndex = 8
+            Marked = True
+            Style = tbsCheck
+            OnClick = ToolButton11Click
+          end
+          object ToolButton10: TToolButton
+            Left = 31
+            Top = 0
+            Width = 8
+            Caption = 'ToolButton10'
+            ImageIndex = 13
+            Style = tbsSeparator
+          end
+        end
+      end
+      object SynEdit1: TSynEdit
+        Left = 0
+        Top = 35
+        Width = 683
+        Height = 494
+        Align = alClient
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Courier New'
+        Font.Style = []
+        TabOrder = 1
+        CodeFolding.GutterShapeSize = 11
+        CodeFolding.CollapsedLineColor = clGrayText
+        CodeFolding.FolderBarLinesColor = clGrayText
+        CodeFolding.IndentGuidesColor = clGray
+        CodeFolding.IndentGuides = True
+        CodeFolding.ShowCollapsedLine = False
+        CodeFolding.ShowHintMark = True
+        UseCodeFolding = False
+        Gutter.Font.Charset = DEFAULT_CHARSET
+        Gutter.Font.Color = clWindowText
+        Gutter.Font.Height = -11
+        Gutter.Font.Name = 'Courier New'
+        Gutter.Font.Style = []
+        Gutter.ShowLineNumbers = True
+        Options = [eoAltSetsColumnMode, eoAutoIndent, eoDragDropEditing, eoEnhanceEndKey, eoGroupUndo, eoScrollPastEol, eoShowScrollHint, eoSmartTabDelete, eoSmartTabs, eoTabsToSpaces]
+        OnGutterClick = SynEdit1GutterClick
+        FontSmoothing = fsmNone
+      end
+    end
+    object Panel2: TPanel
+      Left = 683
+      Top = 0
+      Width = 248
+      Height = 529
+      Align = alRight
+      BevelOuter = bvNone
+      TabOrder = 1
+      object PageControl2: TPageControl
+        Left = 0
+        Top = 0
+        Width = 248
+        Height = 529
+        ActivePage = TabSheet2
+        Align = alClient
+        TabOrder = 0
+        object TabSheet2: TTabSheet
+          Caption = #1055#1088#1072#1074#1082#1072
+          ImageIndex = 2
+          object ToolBar7: TToolBar
+            Left = 0
+            Top = 0
+            Width = 240
+            Height = 22
+            AutoSize = True
+            Caption = 'ToolBar7'
+            Images = ImageList16
             TabOrder = 0
-            object ToolButton30: TToolButton
+            object ToolButton15: TToolButton
               Left = 0
               Top = 0
-              Hint = #1042#1089#1090#1072#1074#1080#1090#1100' '#1080#1079' '#1073#1091#1092#1077#1088#1072
-              Caption = 'ToolButton30'
-              DropdownMenu = PopupMenu3
+              Hint = #1056#1072#1074#1077#1088#1085#1091#1090#1100' '#1089#1087#1080#1089#1086#1082
+              Caption = 'ToolButton15'
               ImageIndex = 0
               ParentShowHint = False
               ShowHint = True
-              Style = tbsDropDown
-              OnClick = ToolButton30Click
+              OnClick = ToolButton15Click
             end
-            object ToolButton29: TToolButton
-              Left = 46
+            object ToolButton20: TToolButton
+              Left = 23
               Top = 0
-              Width = 8
-              Caption = 'ToolButton29'
-              ImageIndex = 10
-              Style = tbsSeparator
-            end
-            object ToolButton27: TToolButton
-              Left = 54
-              Top = 0
-              Hint = #1042#1099#1076#1077#1083#1080#1090#1100' '#1074#1077#1089#1100' '#1090#1077#1082#1089#1090' '#1080' '#1089#1082#1086#1087#1080#1088#1086#1074#1082#1072#1090#1100' '#1074' '#1073#1091#1092#1077#1088
-              Action = aSelectAllText
+              Hint = #1057#1074#1077#1088#1085#1091#1090#1100' '#1089#1087#1080#1089#1086#1082
+              Caption = 'ToolButton20'
+              ImageIndex = 1
               ParentShowHint = False
               ShowHint = True
-            end
-            object ToolButton2: TToolButton
-              Left = 85
-              Top = 0
-              Width = 8
-              Caption = 'ToolButton2'
-              ImageIndex = 7
-              Style = tbsSeparator
-            end
-            object ToolButton8: TToolButton
-              Left = 93
-              Top = 0
-              Hint = #1042' '#1074#1077#1088#1093#1085#1080#1081' '#1088#1077#1075#1080#1089#1090#1088
-              Caption = 'ToolButton8'
-              ImageIndex = 4
-              ParentShowHint = False
-              ShowHint = True
-              OnClick = ToolButton8Click
-            end
-            object ToolButton13: TToolButton
-              Left = 124
-              Top = 0
-              Hint = #1042' '#1085#1080#1078#1085#1080#1081' '#1088#1077#1075#1080#1089#1090#1088
-              Caption = 'ToolButton13'
-              ImageIndex = 5
-              ParentShowHint = False
-              ShowHint = True
-              OnClick = ToolButton13Click
-            end
-            object ToolButton9: TToolButton
-              Left = 155
-              Top = 0
-              Width = 8
-              Caption = 'ToolButton9'
-              ImageIndex = 9
-              Style = tbsSeparator
-            end
-            object ToolButton12: TToolButton
-              Left = 163
-              Top = 0
-              Hint = #1057#1086#1088#1090#1080#1088#1086#1074#1082#1072' '#1089#1087#1080#1089#1082#1072
-              Caption = 'ToolButton12'
-              DropdownMenu = PopupMenu_sort
-              ImageIndex = 6
-              Style = tbsDropDown
-              OnClick = ToolButton12Click
-            end
-            object ToolButton22: TToolButton
-              Left = 209
-              Top = 0
-              Width = 8
-              Caption = 'ToolButton22'
-              ImageIndex = 4
-              Style = tbsSeparator
-            end
-            object ToolButton14: TToolButton
-              Left = 217
-              Top = 0
-              Hint = #1056#1072#1089#1090#1103#1085#1091#1090#1100' '#1090#1077#1082#1089#1090' '#1082#1086#1083#1086#1085#1082#1072#1084#1080' '#1087#1086' '#1088#1072#1079#1076#1077#1083#1080#1090#1077#1083#1102
-              Caption = 'ToolButton14'
-              ImageIndex = 9
-              ParentShowHint = False
-              ShowHint = True
-              OnClick = ToolButton14Click
-            end
-            object ToolButton26: TToolButton
-              Left = 248
-              Top = 0
-              Width = 8
-              Caption = 'ToolButton26'
-              ImageIndex = 6
-              Style = tbsSeparator
-            end
-            object ToolButton7: TToolButton
-              Left = 256
-              Top = 0
-              Action = aUndo4StrOper
-              ParentShowHint = False
-              ShowHint = True
-              Visible = False
-            end
-            object ToolButton6: TToolButton
-              Left = 287
-              Top = 0
-              Hint = #1054#1090#1086#1073#1088#1072#1078#1072#1090#1100' '#1074#1089#1077' '#1089#1080#1084#1074#1086#1083#1099
-              Caption = 'ToolButton6'
-              ImageIndex = 11
-              ParentShowHint = False
-              ShowHint = True
-              Style = tbsCheck
-              OnClick = ToolButton6Click
+              OnClick = ToolButton20Click
             end
           end
-          object ToolBar2: TToolBar
-            Left = 552
-            Top = 0
-            Width = 32
-            Height = 35
-            Align = alRight
-            ButtonHeight = 30
-            ButtonWidth = 31
-            Caption = 'ToolBar2'
-            Images = ImageList24
+          object CategoryPanelGroup1: TCategoryPanelGroup
+            Left = 0
+            Top = 22
+            Width = 240
+            Height = 479
+            VertScrollBar.Tracking = True
+            Align = alClient
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
             TabOrder = 1
-            object ToolButton11: TToolButton
-              Left = 0
-              Top = 0
-              Caption = 'ToolButton11'
-              Down = True
-              ImageIndex = 8
-              Marked = True
-              Style = tbsCheck
-              OnClick = ToolButton11Click
-            end
-            object ToolButton10: TToolButton
-              Left = 31
-              Top = 0
-              Width = 8
-              Caption = 'ToolButton10'
-              ImageIndex = 13
-              Style = tbsSeparator
-            end
-          end
-        end
-        object SynEdit1: TSynEdit
-          Left = 0
-          Top = 35
-          Width = 584
-          Height = 461
-          Align = alClient
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -13
-          Font.Name = 'Courier New'
-          Font.Style = []
-          TabOrder = 1
-          CodeFolding.GutterShapeSize = 11
-          CodeFolding.CollapsedLineColor = clGrayText
-          CodeFolding.FolderBarLinesColor = clGrayText
-          CodeFolding.IndentGuidesColor = clGray
-          CodeFolding.IndentGuides = True
-          CodeFolding.ShowCollapsedLine = False
-          CodeFolding.ShowHintMark = True
-          UseCodeFolding = False
-          Gutter.Font.Charset = DEFAULT_CHARSET
-          Gutter.Font.Color = clWindowText
-          Gutter.Font.Height = -11
-          Gutter.Font.Name = 'Courier New'
-          Gutter.Font.Style = []
-          Options = [eoAltSetsColumnMode, eoAutoIndent, eoDragDropEditing, eoEnhanceEndKey, eoGroupUndo, eoScrollPastEol, eoShowScrollHint, eoSmartTabDelete, eoSmartTabs, eoTabsToSpaces]
-          OnGutterClick = SynEdit1GutterClick
-          FontSmoothing = fsmNone
-        end
-      end
-      object Panel2: TPanel
-        Left = 584
-        Top = 0
-        Width = 232
-        Height = 496
-        Align = alRight
-        BevelOuter = bvNone
-        TabOrder = 1
-        object PageControl2: TPageControl
-          Left = 0
-          Top = 0
-          Width = 232
-          Height = 496
-          ActivePage = TabSheet1
-          Align = alClient
-          TabOrder = 0
-          object TabSheet1: TTabSheet
-            Caption = #1055#1088#1072#1074#1082#1072
-            object GroupBox1: TGroupBox
-              Left = 3
-              Top = 3
-              Width = 215
-              Height = 150
-              Caption = #1059#1076#1072#1083#1077#1085#1080#1077' '#1089#1080#1084#1074#1086#1083#1086#1074' '#1089#1083#1077#1074#1072'/'#1089#1087#1088#1072#1074#1072
+            object CategoryPanel3: TCategoryPanel
+              Top = 305
+              Height = 172
+              Caption = #1059#1076#1072#1083#1077#1085#1080#1077' '#1089#1090#1088#1086#1082
               TabOrder = 0
+              object SpeedButton7: TSpeedButton
+                Left = 138
+                Top = 106
+                Width = 71
+                Height = 30
+                Caption = #1059#1076#1072#1083#1080#1090#1100
+                OnClick = SpeedButton7Click
+              end
+              object CheckBox4: TCheckBox
+                Left = 26
+                Top = 79
+                Width = 35
+                Height = 17
+                Caption = #1053#1045
+                TabOrder = 0
+              end
+              object Edit3: TEdit
+                Left = 67
+                Top = 79
+                Width = 142
+                Height = 21
+                TabOrder = 1
+              end
+              object RadioButton4: TRadioButton
+                Left = 10
+                Top = 10
+                Width = 113
+                Height = 17
+                Caption = #1044#1091#1073#1083#1080#1082#1072#1090#1099' '#1089#1090#1088#1086#1082
+                TabOrder = 2
+              end
+              object RadioButton5: TRadioButton
+                Left = 10
+                Top = 33
+                Width = 113
+                Height = 17
+                Caption = #1055#1091#1089#1090#1099#1077' '#1089#1090#1088#1086#1082#1080
+                TabOrder = 3
+              end
+              object RadioButton6: TRadioButton
+                Left = 10
+                Top = 56
+                Width = 171
+                Height = 17
+                Caption = #1043#1076#1077' '#1074#1089#1090#1088#1077#1095#1072#1077#1090#1089#1103' '#1087#1086#1076#1089#1090#1088#1086#1082#1072':'
+                TabOrder = 4
+              end
+            end
+            object CategoryPanel2: TCategoryPanel
+              Top = 161
+              Height = 144
+              Caption = #1042#1089#1090#1072#1074#1082#1072
+              TabOrder = 1
+              object Label6: TLabel
+                Left = 10
+                Top = 21
+                Width = 101
+                Height = 13
+                Caption = #1057#1090#1088#1086#1082#1072' '#1076#1083#1103' '#1074#1089#1090#1072#1074#1082#1080
+              end
+              object SpeedButton3: TSpeedButton
+                Left = 10
+                Top = 75
+                Width = 31
+                Height = 30
+                Hint = #1044#1086#1073#1072#1074#1080#1090#1100' '#1089#1090#1088#1086#1082#1091' '#1089#1083#1077#1074#1072
+                Caption = '>'
+                Font.Charset = DEFAULT_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -16
+                Font.Name = 'MS Sans Serif'
+                Font.Style = []
+                ParentFont = False
+                ParentShowHint = False
+                ShowHint = True
+                OnClick = SpeedButton3Click
+              end
+              object SpeedButton4: TSpeedButton
+                Left = 180
+                Top = 75
+                Width = 31
+                Height = 30
+                Hint = #1044#1086#1073#1072#1074#1080#1090#1100' '#1089#1090#1088#1086#1082#1091' '#1089#1087#1088#1072#1074#1072
+                Caption = '<'
+                Font.Charset = DEFAULT_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -16
+                Font.Name = 'MS Sans Serif'
+                Font.Style = []
+                ParentFont = False
+                ParentShowHint = False
+                ShowHint = True
+                OnClick = SpeedButton4Click
+              end
+              object SpeedButton5: TSpeedButton
+                Left = 96
+                Top = 75
+                Width = 31
+                Height = 30
+                Hint = #1044#1086#1073#1072#1074#1080#1090#1100' '#1089#1090#1088#1086#1082#1091' '#1074' '#1087#1086#1079#1080#1094#1080#1102' '#1082#1091#1088#1089#1086#1088#1072
+                Caption = '^'
+                Font.Charset = DEFAULT_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -27
+                Font.Name = 'MS Sans Serif'
+                Font.Style = []
+                ParentFont = False
+                ParentShowHint = False
+                ShowHint = True
+                OnClick = SpeedButton5Click
+              end
+              object SpeedButton6: TSpeedButton
+                Left = 173
+                Top = 12
+                Width = 36
+                Height = 22
+                Hint = #1047#1085#1072#1095#1077#1085#1080#1103' '#1080#1079' '#1089#1087#1080#1089#1082#1072'. '#1048#1089#1087#1086#1083#1100#1079#1091#1077#1090#1089#1103' '#1076#1083#1103' '#1076#1091#1073#1083#1080#1088#1086#1074#1072#1085#1080#1103' '#1089#1090#1088#1086#1082
+                Caption = '$val$'
+                Font.Charset = DEFAULT_CHARSET
+                Font.Color = clRed
+                Font.Height = -11
+                Font.Name = 'MS Sans Serif'
+                Font.Style = []
+                ParentFont = False
+                ParentShowHint = False
+                ShowHint = True
+                OnClick = SpeedButton6Click
+              end
+              object Edit2: TEdit
+                Left = 10
+                Top = 40
+                Width = 199
+                Height = 21
+                TabOrder = 0
+              end
+            end
+            object CategoryPanel1: TCategoryPanel
+              Top = 0
+              Height = 161
+              Hint = #1059#1076#1072#1083#1077#1085#1080#1077' '#1089#1080#1084#1074#1086#1083#1086#1074' '#1089#1083#1077#1074#1072'/'#1089#1087#1088#1072#1074#1072
+              Caption = #1059#1076#1072#1083#1077#1085#1080#1077' '#1089#1080#1084#1074#1086#1083#1086#1074' '#1089#1083#1077#1074#1072'/'#1089#1087#1088#1072#1074#1072
+              ParentShowHint = False
+              ShowHint = False
+              TabOrder = 2
               object SpeedButton1: TSpeedButton
-                Left = 164
-                Top = 100
+                Left = 181
+                Top = 84
                 Width = 39
                 Height = 37
                 Hint = #1059#1076#1072#1083#1080#1090#1100' '#1089#1087#1088#1072#1074#1072
+                Anchors = [akRight, akBottom]
                 Glyph.Data = {
                   9A0B0000424D9A0B00000000000036000000280000001B0000001B0000000100
                   200000000000640B000000000000000000000000000000000000FFFFFFFFFFFF
@@ -379,8 +538,8 @@ object frmMain: TfrmMain
                 OnClick = SpeedButton1Click
               end
               object SpeedButton2: TSpeedButton
-                Left = 12
-                Top = 100
+                Left = 18
+                Top = 84
                 Width = 39
                 Height = 37
                 Hint = #1059#1076#1072#1083#1080#1090#1100' '#1089#1083#1077#1074#1072
@@ -407,523 +566,176 @@ object frmMain: TfrmMain
                 ShowHint = True
                 OnClick = SpeedButton2Click
               end
+              object Edit1: TEdit
+                Left = 163
+                Top = 31
+                Width = 30
+                Height = 21
+                TabOrder = 0
+                OnKeyPress = Edit1KeyPress
+              end
               object RadioButton1: TRadioButton
                 Left = 10
-                Top = 18
+                Top = 10
                 Width = 131
                 Height = 17
                 Caption = #1055#1088#1086#1073#1077#1083#1099' '#1080' '#1090#1072#1073#1091#1083#1103#1094#1080#1080
-                TabOrder = 0
+                TabOrder = 1
               end
               object RadioButton2: TRadioButton
                 Left = 10
-                Top = 41
+                Top = 33
                 Width = 147
                 Height = 17
                 Caption = #1044#1086'  '#1091#1082#1072#1079#1072#1085#1085#1086#1075#1086' '#1089#1080#1084#1074#1086#1083#1072
-                TabOrder = 1
+                TabOrder = 2
               end
               object RadioButton3: TRadioButton
                 Left = 10
-                Top = 64
+                Top = 56
                 Width = 113
                 Height = 17
                 Caption = #1053#1072' '#1086#1076#1080#1085' '#1089#1080#1084#1074#1086#1083
-                TabOrder = 2
-              end
-              object Edit1: TEdit
-                Left = 163
-                Top = 39
-                Width = 41
-                Height = 21
-                TabOrder = 3
-                OnKeyPress = Edit1KeyPress
-              end
-            end
-            object GroupBox2: TGroupBox
-              Left = 3
-              Top = 159
-              Width = 215
-              Height = 119
-              Caption = #1042#1089#1090#1072#1074#1082#1072
-              TabOrder = 1
-              object Label6: TLabel
-                Left = 12
-                Top = 21
-                Width = 101
-                Height = 13
-                Caption = #1057#1090#1088#1086#1082#1072' '#1076#1083#1103' '#1074#1089#1090#1072#1074#1082#1080
-              end
-              object SpeedButton6: TSpeedButton
-                Left = 165
-                Top = 12
-                Width = 36
-                Height = 22
-                Hint = #1047#1085#1072#1095#1077#1085#1080#1103' '#1080#1079' '#1089#1087#1080#1089#1082#1072'. '#1048#1089#1087#1086#1083#1100#1079#1091#1077#1090#1089#1103' '#1076#1083#1103' '#1076#1091#1073#1083#1080#1088#1086#1074#1072#1085#1080#1103' '#1089#1090#1088#1086#1082
-                Caption = '$val$'
-                Font.Charset = DEFAULT_CHARSET
-                Font.Color = clRed
-                Font.Height = -11
-                Font.Name = 'MS Sans Serif'
-                Font.Style = []
-                ParentFont = False
-                ParentShowHint = False
-                ShowHint = True
-                OnClick = SpeedButton6Click
-              end
-              object SpeedButton3: TSpeedButton
-                Left = 11
-                Top = 75
-                Width = 31
-                Height = 30
-                Hint = #1044#1086#1073#1072#1074#1080#1090#1100' '#1089#1090#1088#1086#1082#1091' '#1089#1083#1077#1074#1072
-                Caption = '>'
-                Font.Charset = DEFAULT_CHARSET
-                Font.Color = clWindowText
-                Font.Height = -16
-                Font.Name = 'MS Sans Serif'
-                Font.Style = []
-                ParentFont = False
-                ParentShowHint = False
-                ShowHint = True
-                OnClick = SpeedButton3Click
-              end
-              object SpeedButton5: TSpeedButton
-                Left = 92
-                Top = 75
-                Width = 31
-                Height = 30
-                Hint = #1044#1086#1073#1072#1074#1080#1090#1100' '#1089#1090#1088#1086#1082#1091' '#1074' '#1087#1086#1079#1080#1094#1080#1102' '#1082#1091#1088#1089#1086#1088#1072
-                Caption = '^'
-                Font.Charset = DEFAULT_CHARSET
-                Font.Color = clWindowText
-                Font.Height = -27
-                Font.Name = 'MS Sans Serif'
-                Font.Style = []
-                ParentFont = False
-                ParentShowHint = False
-                ShowHint = True
-                OnClick = SpeedButton5Click
-              end
-              object SpeedButton4: TSpeedButton
-                Left = 172
-                Top = 75
-                Width = 31
-                Height = 30
-                Hint = #1044#1086#1073#1072#1074#1080#1090#1100' '#1089#1090#1088#1086#1082#1091' '#1089#1087#1088#1072#1074#1072
-                Caption = '<'
-                Font.Charset = DEFAULT_CHARSET
-                Font.Color = clWindowText
-                Font.Height = -16
-                Font.Name = 'MS Sans Serif'
-                Font.Style = []
-                ParentFont = False
-                ParentShowHint = False
-                ShowHint = True
-                OnClick = SpeedButton4Click
-              end
-              object Edit2: TEdit
-                Left = 11
-                Top = 40
-                Width = 192
-                Height = 21
-                TabOrder = 0
-              end
-            end
-            object GroupBox3: TGroupBox
-              Left = 3
-              Top = 284
-              Width = 215
-              Height = 165
-              Caption = #1059#1076#1072#1083#1077#1085#1080#1077' '#1089#1090#1088#1086#1082
-              TabOrder = 2
-              object SpeedButton7: TSpeedButton
-                Left = 133
-                Top = 124
-                Width = 71
-                Height = 30
-                Caption = #1059#1076#1072#1083#1080#1090#1100
-                OnClick = SpeedButton7Click
-              end
-              object RadioButton4: TRadioButton
-                Left = 14
-                Top = 24
-                Width = 113
-                Height = 17
-                Caption = #1044#1091#1073#1083#1080#1082#1072#1090#1099' '#1089#1090#1088#1086#1082
-                TabOrder = 0
-              end
-              object RadioButton5: TRadioButton
-                Left = 14
-                Top = 47
-                Width = 113
-                Height = 17
-                Caption = #1055#1091#1089#1090#1099#1077' '#1089#1090#1088#1086#1082#1080
-                TabOrder = 1
-              end
-              object RadioButton6: TRadioButton
-                Left = 14
-                Top = 70
-                Width = 171
-                Height = 17
-                Caption = #1043#1076#1077' '#1074#1089#1090#1088#1077#1095#1072#1077#1090#1089#1103' '#1087#1086#1076#1089#1090#1088#1086#1082#1072':'
-                TabOrder = 2
-              end
-              object Edit3: TEdit
-                Left = 71
-                Top = 93
-                Width = 130
-                Height = 21
                 TabOrder = 3
               end
-              object CheckBox4: TCheckBox
-                Left = 30
-                Top = 93
-                Width = 35
-                Height = 17
-                Caption = #1053#1045
-                TabOrder = 4
-              end
-            end
-          end
-          object TabSheet3: TTabSheet
-            Caption = #1045#1097#1077
-            ImageIndex = 2
-            object CheckBox2: TCheckBox
-              Left = 15
-              Top = 11
-              Width = 170
-              Height = 39
-              Caption = #1042#1077#1088#1090#1080#1082#1072#1083#1100#1085#1086#1077' '#1074#1099#1076#1077#1083#1077#1085#1080#1077'     ('#1089' '#1079#1072#1078#1072#1090#1099#1084' ALT)'
-              Checked = True
-              State = cbChecked
-              TabOrder = 0
-              WordWrap = True
-              OnClick = CheckBox2Click
-            end
-            object CheckBox3: TCheckBox
-              Left = 15
-              Top = 56
-              Width = 170
-              Height = 17
-              Caption = #1055#1086#1082#1072#1079#1099#1074#1072#1090#1100' '#1085#1086#1084#1077#1088#1072' '#1089#1090#1088#1086#1082
-              TabOrder = 1
-              OnClick = CheckBox3Click
             end
           end
         end
-      end
-    end
-    object tsColToStr: TTabSheet
-      Caption = #1050#1086#1083#1086#1085#1082#1072' '#1074' '#1089#1090#1088#1086#1082#1091
-      OnHide = tsColToStrHide
-      object Panel1: TPanel
-        Left = 0
-        Top = 0
-        Width = 816
-        Height = 496
-        Align = alClient
-        BevelOuter = bvNone
-        TabOrder = 0
-        object Splitter1: TSplitter
-          Left = 273
-          Top = 0
-          Height = 496
-          ExplicitHeight = 378
-        end
-        object Panel3: TPanel
-          Left = 276
-          Top = 0
-          Width = 540
-          Height = 496
-          Align = alClient
-          BevelOuter = bvNone
-          TabOrder = 0
-          object Panel14: TPanel
+        object TabSheet3: TTabSheet
+          Caption = #1055#1088#1077#1086#1073#1088#1072#1079#1086#1074#1072#1085#1080#1077
+          ImageIndex = 2
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
+          object ToolBar8: TToolBar
             Left = 0
             Top = 0
-            Width = 540
-            Height = 496
-            Align = alClient
-            BevelOuter = bvNone
-            TabOrder = 0
-            object ToolBar1: TToolBar
-              Left = 0
-              Top = 0
-              Width = 540
-              Height = 30
-              AutoSize = True
-              ButtonHeight = 30
-              ButtonWidth = 31
-              Caption = 'ToolBar1'
-              EdgeInner = esNone
-              EdgeOuter = esNone
-              Images = ImageList24
-              TabOrder = 0
-              object ToolButton3: TToolButton
-                Left = 0
-                Top = 0
-                Hint = #1055#1088#1077#1086#1073#1088#1072#1079#1086#1074#1072#1090#1100' '#1074' '#1089#1090#1088#1086#1082#1091' '#1095#1077#1088#1077#1079' '#1079#1072#1087#1103#1090#1091#1102
-                Caption = 'ToolButton3'
-                ImageIndex = 1
-                ParentShowHint = False
-                ShowHint = True
-                OnClick = ToolButton3Click
-              end
-              object ToolButton4: TToolButton
-                Left = 31
-                Top = 0
-                Width = 8
-                Caption = 'ToolButton4'
-                ImageIndex = 1
-                Style = tbsSeparator
-              end
-              object ToolButton1: TToolButton
-                Left = 39
-                Top = 0
-                Action = aCopyResultToBuffer
-                ParentShowHint = False
-                ShowHint = True
-              end
-            end
-            object Memo1: TMemo
-              Left = 0
-              Top = 30
-              Width = 540
-              Height = 466
-              Align = alClient
-              Font.Charset = RUSSIAN_CHARSET
-              Font.Color = clWindowText
-              Font.Height = -13
-              Font.Name = 'Courier New'
-              Font.Style = []
-              ParentFont = False
-              ScrollBars = ssVertical
-              TabOrder = 1
-            end
-          end
-        end
-        object Panel5: TPanel
-          Left = 0
-          Top = 0
-          Width = 273
-          Height = 496
-          Align = alLeft
-          BevelOuter = bvNone
-          TabOrder = 1
-          object ToolBar6: TToolBar
-            Left = 0
-            Top = 0
-            Width = 273
-            Height = 29
-            ButtonHeight = 30
-            ButtonWidth = 31
-            Caption = 'ToolBar6'
-            Images = ImageList24
-            TabOrder = 0
-            object ToolButton19: TToolButton
-              Left = 0
-              Top = 0
-              Hint = #1042#1089#1090#1072#1074#1080#1090#1100' '#1080#1079' '#1073#1091#1092#1077#1088#1072
-              Caption = 'ToolButton19'
-              DropdownMenu = PopupMenu3
-              ImageIndex = 0
-              ParentShowHint = False
-              ShowHint = True
-              Style = tbsDropDown
-              OnClick = ToolButton19Click
-            end
-          end
-          object lbTextColumn_in: TListBox
-            Left = 0
-            Top = 29
-            Width = 273
-            Height = 467
-            Align = alClient
-            Font.Charset = RUSSIAN_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -13
-            Font.Name = 'Courier New'
-            Font.Style = []
-            MultiSelect = True
-            ParentFont = False
-            TabOrder = 1
-          end
-        end
-      end
-    end
-    object tsStrToCol: TTabSheet
-      Caption = #1057#1090#1088#1086#1082#1072' '#1074' '#1082#1086#1083#1086#1085#1082#1091
-      ImageIndex = 1
-      object Panel6: TPanel
-        Left = 0
-        Top = 0
-        Width = 816
-        Height = 496
-        Align = alClient
-        BevelOuter = bvNone
-        TabOrder = 0
-        object Splitter2: TSplitter
-          Left = 307
-          Top = 0
-          Height = 496
-          ExplicitLeft = 281
-          ExplicitHeight = 378
-        end
-        object Panel8: TPanel
-          Left = 310
-          Top = 0
-          Width = 506
-          Height = 496
-          Align = alClient
-          BevelOuter = bvNone
-          TabOrder = 0
-          object mSTCto: TMemo
-            Left = 0
-            Top = 29
-            Width = 506
-            Height = 467
-            Align = alClient
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -13
-            Font.Name = 'Courier New'
-            Font.Style = []
-            ParentFont = False
-            ScrollBars = ssVertical
-            TabOrder = 0
-          end
-          object ToolBar5: TToolBar
-            Left = 0
-            Top = 0
-            Width = 506
-            Height = 29
-            ButtonHeight = 30
-            ButtonWidth = 31
-            Caption = 'ToolBar5'
-            Images = ImageList24
-            TabOrder = 1
-            object ToolButton17: TToolButton
-              Left = 0
-              Top = 0
-              Hint = #1055#1088#1077#1086#1073#1088#1072#1079#1086#1074#1072#1090#1100' '#1074' '#1082#1086#1083#1086#1085#1082#1091
-              Caption = 'ToolButton17'
-              ImageIndex = 1
-              ParentShowHint = False
-              ShowHint = True
-              OnClick = ToolButton17Click
-            end
-            object ToolButton28: TToolButton
-              Left = 31
-              Top = 0
-              Width = 8
-              Caption = 'ToolButton28'
-              ImageIndex = 5
-              Style = tbsSeparator
-            end
-            object ToolButton18: TToolButton
-              Left = 39
-              Top = 0
-              Hint = #1059#1073#1088#1072#1090#1100' '#1083#1080#1096#1085#1080#1077' '#1087#1088#1086#1073#1077#1083#1099
-              Caption = 'ToolButton18'
-              ImageIndex = 3
-              ParentShowHint = False
-              ShowHint = True
-              OnClick = ToolButton18Click
-            end
-            object ToolButton5: TToolButton
-              Left = 70
-              Top = 0
-              Width = 8
-              Caption = 'ToolButton5'
-              ImageIndex = 5
-              Style = tbsSeparator
-            end
-            object ToolButton21: TToolButton
-              Left = 78
-              Top = 0
-              Hint = #1042#1099#1076#1077#1083#1080#1090#1100' '#1074#1089#1105' '#1080' '#1089#1082#1086#1087#1080#1088#1086#1074#1072#1090#1100
-              Caption = 'ToolButton21'
-              ImageIndex = 2
-              OnClick = ToolButton21Click
-            end
-          end
-        end
-        object Panel10: TPanel
-          Left = 0
-          Top = 0
-          Width = 307
-          Height = 496
-          Align = alLeft
-          BevelOuter = bvNone
-          TabOrder = 1
-          object mSTCfrom: TMemo
-            Left = 0
-            Top = 30
-            Width = 307
-            Height = 466
-            Align = alClient
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -13
-            Font.Name = 'Courier New'
-            Font.Style = []
-            ParentFont = False
-            ScrollBars = ssVertical
-            TabOrder = 0
-          end
-          object ToolBar4: TToolBar
-            Left = 0
-            Top = 0
-            Width = 307
-            Height = 30
+            Width = 240
+            Height = 22
             AutoSize = True
-            ButtonHeight = 30
-            ButtonWidth = 31
-            Caption = 'ToolBar4'
-            Images = ImageList24
-            TabOrder = 1
-            object ToolButton16: TToolButton
+            Caption = 'ToolBar8'
+            Images = ImageList16
+            TabOrder = 0
+            object ToolButton23: TToolButton
               Left = 0
               Top = 0
-              Hint = #1042#1089#1090#1072#1074#1080#1090#1100' '#1080#1079' '#1073#1091#1092#1077#1088#1072
-              Caption = 'ToolButton16'
+              Caption = 'ToolButton23'
               ImageIndex = 0
-              ParentShowHint = False
-              ShowHint = True
-              OnClick = ToolButton16Click
+              OnClick = ToolButton23Click
             end
-            object Label5: TLabel
-              Left = 31
+            object ToolButton24: TToolButton
+              Left = 23
               Top = 0
-              Width = 98
-              Height = 30
-              Hint = #1056#1072#1079#1076#1077#1083#1080#1090#1077#1083#1100
-              Align = alClient
-              Alignment = taCenter
-              AutoSize = False
-              Caption = #1048#1089#1087#1086#1083#1100#1079#1086#1074#1072#1090#1100' '#1088#1072#1079#1076#1077#1083#1080#1090#1077#1083#1100
-              ParentShowHint = False
-              ShowHint = True
-              WordWrap = True
+              Caption = 'ToolButton24'
+              ImageIndex = 1
+              OnClick = ToolButton24Click
             end
-            object ComboBox1: TComboBox
-              Left = 129
-              Top = 0
-              Width = 160
-              Height = 24
-              Font.Charset = DEFAULT_CHARSET
-              Font.Color = clWindowText
-              Font.Height = -13
-              Font.Name = 'MS Sans Serif'
-              Font.Style = [fsBold]
-              ParentFont = False
+          end
+          object CategoryPanelGroup2: TCategoryPanelGroup
+            Left = 0
+            Top = 22
+            Width = 240
+            Height = 479
+            VertScrollBar.Tracking = True
+            Align = alClient
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            TabOrder = 1
+            object CategoryPanel6: TCategoryPanel
+              Top = 217
+              Height = 120
+              Caption = #1057#1090#1088#1086#1082#1072' '#1074' '#1082#1086#1083#1086#1085#1082#1091
               TabOrder = 0
-              Items.Strings = (
-                ', - ['#1079#1072#1087#1103#1090#1072#1103']'
-                '; - ['#1090#1086#1095#1082#1072' '#1089' '#1079#1072#1087#1103#1090#1086#1081']'
-                ': - ['#1076#1074#1086#1077#1090#1086#1095#1080#1077']'
-                '  - ['#1087#1088#1086#1073#1077#1083']')
+              ExplicitWidth = 185
+              object Label2: TLabel
+                Left = 12
+                Top = 13
+                Width = 66
+                Height = 13
+                Caption = #1056#1072#1079#1076#1077#1083#1080#1090#1077#1083#1100
+              end
+              object SpeedButton10: TSpeedButton
+                Left = 117
+                Top = 48
+                Width = 100
+                Height = 30
+                Caption = #1042' '#1082#1086#1083#1086#1085#1082#1091
+                OnClick = SpeedButton10Click
+              end
+              object ComboBox1: TComboBox
+                Left = 84
+                Top = 8
+                Width = 140
+                Height = 24
+                Font.Charset = DEFAULT_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'MS Sans Serif'
+                Font.Style = [fsBold]
+                ParentFont = False
+                TabOrder = 0
+                Items.Strings = (
+                  ', - ['#1079#1072#1087#1103#1090#1072#1103']'
+                  '; - ['#1090#1086#1095#1082#1072' '#1089' '#1079#1072#1087#1103#1090#1086#1081']'
+                  ': - ['#1076#1074#1086#1077#1090#1086#1095#1080#1077']'
+                  '  - ['#1087#1088#1086#1073#1077#1083']')
+              end
+            end
+            object CategoryPanel5: TCategoryPanel
+              Top = 109
+              Height = 108
+              Caption = #1050#1086#1083#1086#1085#1082#1072'  '#1074' '#1089#1090#1088#1086#1082#1091
+              TabOrder = 1
+              object SpeedButton9: TSpeedButton
+                Left = 117
+                Top = 36
+                Width = 100
+                Height = 30
+                Caption = #1042' '#1089#1090#1088#1086#1082#1091
+                OnClick = SpeedButton9Click
+              end
+              object CheckBox1: TCheckBox
+                Left = 10
+                Top = 10
+                Width = 150
+                Height = 17
+                Caption = #1048#1089#1087#1086#1083#1100#1079#1086#1074#1072#1090#1100' '#1079#1072#1087#1103#1090#1091#1102
+                Checked = True
+                State = cbChecked
+                TabOrder = 0
+              end
+            end
+            object CategoryPanel4: TCategoryPanel
+              Top = 0
+              Height = 109
+              Caption = #1056#1072#1089#1090#1103#1085#1091#1090#1100' '#1082#1086#1083#1086#1085#1082#1072#1084#1080
+              TabOrder = 2
+              object Label1: TLabel
+                Left = 10
+                Top = 10
+                Width = 66
+                Height = 13
+                Caption = #1056#1072#1079#1076#1077#1083#1080#1090#1077#1083#1100
+              end
+              object SpeedButton8: TSpeedButton
+                Left = 117
+                Top = 40
+                Width = 100
+                Height = 30
+                Caption = #1056#1072#1089#1090#1103#1085#1091#1090#1100
+                OnClick = SpeedButton8Click
+              end
+              object Edit4: TEdit
+                Left = 115
+                Top = 7
+                Width = 38
+                Height = 21
+                TabOrder = 0
+              end
             end
           end
         end
@@ -935,9 +747,30 @@ object frmMain: TfrmMain
     Top = 208
     object N1: TMenuItem
       Caption = #1060#1072#1081#1083
+      object N8: TMenuItem
+        Action = aOpenFile
+      end
+      object N9: TMenuItem
+        Caption = '-'
+      end
       object miExit: TMenuItem
         Caption = #1042#1099#1093#1086#1076
         OnClick = miExitClick
+      end
+    end
+    object N7: TMenuItem
+      Caption = #1042#1080#1076
+      object miShowRowNm: TMenuItem
+        AutoCheck = True
+        Caption = #1055#1086#1082#1072#1079#1099#1074#1072#1090#1100' '#1085#1086#1084#1077#1088#1072' '#1089#1090#1088#1086#1082
+        Checked = True
+        OnClick = miShowRowNmClick
+      end
+      object miAltSetVerticalSelectMode: TMenuItem
+        AutoCheck = True
+        Caption = #1042#1077#1088#1090#1080#1082#1072#1083#1100#1085#1086#1077' '#1074#1099#1076#1077#1083#1077#1085#1080#1077' ('#1089' '#1079#1072#1078#1072#1090#1099#1084' ALT)'
+        Checked = True
+        OnClick = miAltSetVerticalSelectModeClick
       end
     end
     object N2: TMenuItem
@@ -952,37 +785,22 @@ object frmMain: TfrmMain
     Images = ImageList24
     Left = 264
     Top = 312
-    object aCopyResultToBuffer: TAction
-      Category = 'ColumnToString'
-      Caption = 'aCopyResultToBuffer'
-      Hint = #1057#1082#1086#1087#1080#1088#1086#1074#1072#1090#1100' '#1074#1089#1105' '#1074' '#1073#1091#1092#1077#1088
-      ImageIndex = 2
-      OnExecute = aCopyResultToBufferExecute
-      OnUpdate = aCopyResultToBufferUpdate
-    end
     object aSelectAllText: TAction
-      Category = 'StringOperation'
       Caption = 'SelectAllText'
       Hint = #1042#1099#1076#1077#1083#1080#1090#1100' '#1074#1077#1089#1100' '#1090#1077#1082#1089#1090
       ImageIndex = 10
       OnExecute = aSelectAllTextExecute
-      OnUpdate = aSelectAllTextUpdate
     end
-    object aUndo4StrOper: TAction
-      Category = 'StringOperation'
-      Caption = 'aUndo4StrOper'
-      Hint = #1054#1090#1084#1077#1085#1080#1090#1100' '#1087#1086#1089#1083#1077#1076#1085#1077#1077' '#1076#1077#1081#1089#1090#1074#1080#1077
-      ImageIndex = 7
-      OnExecute = aUndo4StrOperExecute
-      OnUpdate = aUndo4StrOperUpdate
+    object aOpenFile: TAction
+      Caption = #1054#1090#1082#1088#1099#1090#1100' '#1092#1072#1081#1083
+      OnExecute = aOpenFileExecute
     end
   end
   object PopupMenu3: TPopupMenu
     Left = 123
     Top = 232
     object miOpenFileDialog: TMenuItem
-      Caption = #1054#1090#1082#1088#1099#1090#1100' '#1092#1072#1081#1083
-      OnClick = miOpenFileDialogClick
+      Action = aOpenFile
     end
     object N5: TMenuItem
       Caption = '-'
@@ -1006,7 +824,7 @@ object frmMain: TfrmMain
     Left = 208
     Top = 112
     Bitmap = {
-      494C01010C00A000000118001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C00A000140118001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -2212,5 +2030,148 @@ object frmMain: TfrmMain
       Caption = #1055#1086' '#1091#1073#1099#1074#1072#1085#1080#1102
       OnClick = N4Click
     end
+  end
+  object ImageList16: TImageList
+    Left = 392
+    Top = 112
+    Bitmap = {
+      494C010102000800240010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      0000000000003600000028000000400000001000000001002000000000000010
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000008080
+      8000808080008080800080808000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000008080
+      8000808080008080800080808000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000008080
+      8000808080008080800080808000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000008080
+      8000808080008080800080808000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000FFFF
+      FF0000FFFF000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000000000000000000000FF
+      FF00FFFFFF000000000000000000000000000000000000000000000000008080
+      8000808080008080800080808000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000008080
+      8000808080008080800080808000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000FFFFFF0000FFFF00FFFF
+      FF0000FFFF00FFFFFF0000FFFF00000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000FFFFFF0000FFFF00FFFF
+      FF0000FFFF00FFFFFF0000FFFF00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000FFFF00FFFFFF0000FF
+      FF00FFFFFF0000FFFF00FFFFFF00000000000000000000000000000000008080
+      8000808080008080800080808000000000000000000000FFFF00FFFFFF0000FF
+      FF00FFFFFF0000FFFF00FFFFFF00000000000000000000000000000000008080
+      8000808080008080800080808000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000FFFF
+      FF0000FFFF000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000000000000000000000FF
+      FF00FFFFFF000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000424D3E000000000000003E000000
+      2800000040000000100000000100010000000000800000000000000000000000
+      000000000000000000000000FFFFFF00FFFFFFFF00000000FFFFFFFF00000000
+      FF81FF8100000000FFFFFFFF00000000FFE1FFE100000000FFFFFFFF00000000
+      FFE1FFE100000000FFFFFFFF00000000C381FF8100000000C3FFFFFF00000000
+      00E100E10000000000FF00FF0000000000E100E10000000000FF00FF00000000
+      C381FF8100000000C3FFFFFF0000000000000000000000000000000000000000
+      000000000000}
   end
 end
