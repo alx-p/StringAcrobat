@@ -16,7 +16,6 @@ type
     N2: TMenuItem;
     miAbout: TMenuItem;
     Panel11: TPanel;
-    ComboBox1: TComboBox;
     ActionList_main: TActionList;
     PopupMenu3: TPopupMenu;
     N6: TMenuItem;
@@ -87,7 +86,6 @@ type
     Edit4: TEdit;
     SpeedButton8: TSpeedButton;
     CategoryPanel5: TCategoryPanel;
-    CheckBox1: TCheckBox;
     SpeedButton9: TSpeedButton;
     CategoryPanel6: TCategoryPanel;
     Label2: TLabel;
@@ -96,6 +94,9 @@ type
     aOpenFile: TAction;
     N8: TMenuItem;
     N9: TMenuItem;
+    Edit5: TEdit;
+    Label3: TLabel;
+    Edit6: TEdit;
     procedure miAboutClick(Sender: TObject);
     procedure miExitClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -130,6 +131,7 @@ type
     procedure SpeedButton9Click(Sender: TObject);
     procedure SpeedButton10Click(Sender: TObject);
     procedure aOpenFileExecute(Sender: TObject);
+    procedure Edit3KeyPress(Sender: TObject; var Key: Char);
   private
     TStrings_main: TStrings;
 //    function SearchString(const FindStr, SourceString: string; Num: Integer): Integer;
@@ -143,7 +145,7 @@ var
   frmMain: TfrmMain;
 
 const
-  version_num: string = '2.5.0';
+  version_num: string = '2.5.1';
 
 implementation
 
@@ -345,21 +347,25 @@ end;
 
 procedure TfrmMain.SpeedButton10Click(Sender: TObject);
 var
-  s:string;
+  s: string;
   s_del: TSysCharSet;
+  s2: AnsiString;
 begin
   S := SynEdit1.Lines.Text;
-  case ComboBox1.ItemIndex of
+  s2 := Edit5.Text;
+  Include(s_del, s2[1]);
+
+{  case ComboBox1.ItemIndex of
     0: s_del := [','];
     1: s_del := [';'];
     2: s_del := [':'];
     3: s_del := [' '];
-    else //s_del := [ComboBox1.Text];
+    else include(s_del, s2[1]);
     begin
       ShowMessage('Необходимо выбрать разделитель');
       Exit;
     end;
-  end;
+  end;}
   GetWords(S, SynEdit1.Lines, s_del);
 end;
 
@@ -586,8 +592,8 @@ begin
       end;
     end;
 
-    if (s <> '') and CheckBox1.Checked then
-      s := s + ',';
+    if s <> '' then
+      s := s + Edit6.Text;
 
     s := s + ' ';
     s := s + Trim(SynEdit1.Lines.Strings[i]);
@@ -653,8 +659,12 @@ begin
   RadioButton2.Checked := true;
 end;
 
-function TfrmMain.GetWords(const S: string; L: TStrings;
-  Delimiters: TSysCharSet): integer;
+procedure TfrmMain.Edit3KeyPress(Sender: TObject; var Key: Char);
+begin
+  RadioButton6.Checked := true;
+end;
+
+function TfrmMain.GetWords(const S: string; L: TStrings; Delimiters: TSysCharSet): integer;
 var
   len, idx1, idx2: integer;
 begin

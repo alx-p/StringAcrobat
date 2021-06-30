@@ -2,7 +2,7 @@ object frmMain: TfrmMain
   Left = 310
   Top = 295
   Caption = 'String Transformer v.version_num'
-  ClientHeight = 548
+  ClientHeight = 537
   ClientWidth = 931
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -18,7 +18,7 @@ object frmMain: TfrmMain
   TextHeight = 13
   object sbMain: TStatusBar
     Left = 0
-    Top = 529
+    Top = 518
     Width = 931
     Height = 19
     Panels = <
@@ -34,7 +34,7 @@ object frmMain: TfrmMain
     Left = 0
     Top = 0
     Width = 931
-    Height = 529
+    Height = 518
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
@@ -42,7 +42,7 @@ object frmMain: TfrmMain
       Left = 0
       Top = 0
       Width = 683
-      Height = 529
+      Height = 518
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
@@ -194,7 +194,7 @@ object frmMain: TfrmMain
         Left = 0
         Top = 35
         Width = 683
-        Height = 494
+        Height = 483
         Align = alClient
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -225,7 +225,7 @@ object frmMain: TfrmMain
       Left = 683
       Top = 0
       Width = 248
-      Height = 529
+      Height = 518
       Align = alRight
       BevelOuter = bvNone
       TabOrder = 1
@@ -233,7 +233,7 @@ object frmMain: TfrmMain
         Left = 0
         Top = 0
         Width = 248
-        Height = 529
+        Height = 518
         ActivePage = TabSheet2
         Align = alClient
         TabOrder = 0
@@ -252,7 +252,7 @@ object frmMain: TfrmMain
             object ToolButton15: TToolButton
               Left = 0
               Top = 0
-              Hint = #1056#1072#1074#1077#1088#1085#1091#1090#1100' '#1089#1087#1080#1089#1086#1082
+              Hint = #1056#1072#1079#1074#1077#1088#1085#1091#1090#1100' '#1089#1087#1080#1089#1086#1082
               Caption = 'ToolButton15'
               ImageIndex = 0
               ParentShowHint = False
@@ -274,7 +274,7 @@ object frmMain: TfrmMain
             Left = 0
             Top = 22
             Width = 240
-            Height = 479
+            Height = 468
             VertScrollBar.Tracking = True
             Align = alClient
             HeaderFont.Charset = DEFAULT_CHARSET
@@ -284,7 +284,7 @@ object frmMain: TfrmMain
             HeaderFont.Style = []
             TabOrder = 1
             object CategoryPanel3: TCategoryPanel
-              Top = 305
+              Top = 292
               Height = 172
               Caption = #1059#1076#1072#1083#1077#1085#1080#1077' '#1089#1090#1088#1086#1082
               TabOrder = 0
@@ -301,7 +301,10 @@ object frmMain: TfrmMain
                 Top = 79
                 Width = 35
                 Height = 17
+                Hint = #1075#1076#1077' '#1053#1045' '#1074#1089#1090#1088#1077#1095#1072#1077#1090#1089#1103' '#1087#1086#1076#1089#1090#1088#1086#1082#1072
                 Caption = #1053#1045
+                ParentShowHint = False
+                ShowHint = True
                 TabOrder = 0
               end
               object Edit3: TEdit
@@ -310,6 +313,7 @@ object frmMain: TfrmMain
                 Width = 142
                 Height = 21
                 TabOrder = 1
+                OnKeyPress = Edit3KeyPress
               end
               object RadioButton4: TRadioButton
                 Left = 10
@@ -338,19 +342,19 @@ object frmMain: TfrmMain
             end
             object CategoryPanel2: TCategoryPanel
               Top = 161
-              Height = 144
+              Height = 131
               Caption = #1042#1089#1090#1072#1074#1082#1072
               TabOrder = 1
               object Label6: TLabel
                 Left = 10
-                Top = 21
+                Top = 8
                 Width = 101
                 Height = 13
                 Caption = #1057#1090#1088#1086#1082#1072' '#1076#1083#1103' '#1074#1089#1090#1072#1074#1082#1080
               end
               object SpeedButton3: TSpeedButton
                 Left = 10
-                Top = 75
+                Top = 62
                 Width = 31
                 Height = 30
                 Hint = #1044#1086#1073#1072#1074#1080#1090#1100' '#1089#1090#1088#1086#1082#1091' '#1089#1083#1077#1074#1072
@@ -367,7 +371,7 @@ object frmMain: TfrmMain
               end
               object SpeedButton4: TSpeedButton
                 Left = 180
-                Top = 75
+                Top = 62
                 Width = 31
                 Height = 30
                 Hint = #1044#1086#1073#1072#1074#1080#1090#1100' '#1089#1090#1088#1086#1082#1091' '#1089#1087#1088#1072#1074#1072
@@ -384,7 +388,7 @@ object frmMain: TfrmMain
               end
               object SpeedButton5: TSpeedButton
                 Left = 96
-                Top = 75
+                Top = 62
                 Width = 31
                 Height = 30
                 Hint = #1044#1086#1073#1072#1074#1080#1090#1100' '#1089#1090#1088#1086#1082#1091' '#1074' '#1087#1086#1079#1080#1094#1080#1102' '#1082#1091#1088#1089#1086#1088#1072
@@ -400,10 +404,10 @@ object frmMain: TfrmMain
                 OnClick = SpeedButton5Click
               end
               object SpeedButton6: TSpeedButton
-                Left = 173
-                Top = 12
+                Left = 175
+                Top = 27
                 Width = 36
-                Height = 22
+                Height = 21
                 Hint = #1047#1085#1072#1095#1077#1085#1080#1103' '#1080#1079' '#1089#1087#1080#1089#1082#1072'. '#1048#1089#1087#1086#1083#1100#1079#1091#1077#1090#1089#1103' '#1076#1083#1103' '#1076#1091#1073#1083#1080#1088#1086#1074#1072#1085#1080#1103' '#1089#1090#1088#1086#1082
                 Caption = '$val$'
                 Font.Charset = DEFAULT_CHARSET
@@ -418,8 +422,8 @@ object frmMain: TfrmMain
               end
               object Edit2: TEdit
                 Left = 10
-                Top = 40
-                Width = 199
+                Top = 27
+                Width = 157
                 Height = 21
                 TabOrder = 0
               end
@@ -433,7 +437,7 @@ object frmMain: TfrmMain
               ShowHint = False
               TabOrder = 2
               object SpeedButton1: TSpeedButton
-                Left = 181
+                Left = 174
                 Top = 84
                 Width = 39
                 Height = 37
@@ -571,6 +575,7 @@ object frmMain: TfrmMain
                 Top = 31
                 Width = 30
                 Height = 21
+                MaxLength = 1
                 TabOrder = 0
                 OnKeyPress = Edit1KeyPress
               end
@@ -604,10 +609,6 @@ object frmMain: TfrmMain
         object TabSheet3: TTabSheet
           Caption = #1055#1088#1077#1086#1073#1088#1072#1079#1086#1074#1072#1085#1080#1077
           ImageIndex = 2
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object ToolBar8: TToolBar
             Left = 0
             Top = 0
@@ -620,15 +621,21 @@ object frmMain: TfrmMain
             object ToolButton23: TToolButton
               Left = 0
               Top = 0
+              Hint = #1056#1072#1079#1074#1077#1088#1085#1091#1090#1100' '#1089#1087#1080#1089#1086#1082
               Caption = 'ToolButton23'
               ImageIndex = 0
+              ParentShowHint = False
+              ShowHint = True
               OnClick = ToolButton23Click
             end
             object ToolButton24: TToolButton
               Left = 23
               Top = 0
+              Hint = #1057#1074#1077#1088#1085#1091#1090#1100' '#1089#1087#1080#1089#1086#1082
               Caption = 'ToolButton24'
               ImageIndex = 1
+              ParentShowHint = False
+              ShowHint = True
               OnClick = ToolButton24Click
             end
           end
@@ -636,7 +643,7 @@ object frmMain: TfrmMain
             Left = 0
             Top = 22
             Width = 240
-            Height = 479
+            Height = 468
             VertScrollBar.Tracking = True
             Align = alClient
             HeaderFont.Charset = DEFAULT_CHARSET
@@ -646,48 +653,37 @@ object frmMain: TfrmMain
             HeaderFont.Style = []
             TabOrder = 1
             object CategoryPanel6: TCategoryPanel
-              Top = 217
-              Height = 120
+              Top = 200
+              Height = 100
               Caption = #1057#1090#1088#1086#1082#1072' '#1074' '#1082#1086#1083#1086#1085#1082#1091
               TabOrder = 0
-              ExplicitWidth = 185
               object Label2: TLabel
-                Left = 12
-                Top = 13
+                Left = 10
+                Top = 10
                 Width = 66
                 Height = 13
                 Caption = #1056#1072#1079#1076#1077#1083#1080#1090#1077#1083#1100
               end
               object SpeedButton10: TSpeedButton
-                Left = 117
-                Top = 48
+                Left = 115
+                Top = 35
                 Width = 100
                 Height = 30
                 Caption = #1042' '#1082#1086#1083#1086#1085#1082#1091
                 OnClick = SpeedButton10Click
               end
-              object ComboBox1: TComboBox
-                Left = 84
-                Top = 8
-                Width = 140
-                Height = 24
-                Font.Charset = DEFAULT_CHARSET
-                Font.Color = clWindowText
-                Font.Height = -13
-                Font.Name = 'MS Sans Serif'
-                Font.Style = [fsBold]
-                ParentFont = False
+              object Edit5: TEdit
+                Left = 115
+                Top = 7
+                Width = 38
+                Height = 21
+                MaxLength = 1
                 TabOrder = 0
-                Items.Strings = (
-                  ', - ['#1079#1072#1087#1103#1090#1072#1103']'
-                  '; - ['#1090#1086#1095#1082#1072' '#1089' '#1079#1072#1087#1103#1090#1086#1081']'
-                  ': - ['#1076#1074#1086#1077#1090#1086#1095#1080#1077']'
-                  '  - ['#1087#1088#1086#1073#1077#1083']')
               end
             end
             object CategoryPanel5: TCategoryPanel
-              Top = 109
-              Height = 108
+              Top = 100
+              Height = 100
               Caption = #1050#1086#1083#1086#1085#1082#1072'  '#1074' '#1089#1090#1088#1086#1082#1091
               TabOrder = 1
               object SpeedButton9: TSpeedButton
@@ -698,20 +694,25 @@ object frmMain: TfrmMain
                 Caption = #1042' '#1089#1090#1088#1086#1082#1091
                 OnClick = SpeedButton9Click
               end
-              object CheckBox1: TCheckBox
+              object Label3: TLabel
                 Left = 10
                 Top = 10
-                Width = 150
-                Height = 17
-                Caption = #1048#1089#1087#1086#1083#1100#1079#1086#1074#1072#1090#1100' '#1079#1072#1087#1103#1090#1091#1102
-                Checked = True
-                State = cbChecked
+                Width = 66
+                Height = 13
+                Caption = #1056#1072#1079#1076#1077#1083#1080#1090#1077#1083#1100
+              end
+              object Edit6: TEdit
+                Left = 115
+                Top = 7
+                Width = 38
+                Height = 21
+                MaxLength = 1
                 TabOrder = 0
               end
             end
             object CategoryPanel4: TCategoryPanel
               Top = 0
-              Height = 109
+              Height = 100
               Caption = #1056#1072#1089#1090#1103#1085#1091#1090#1100' '#1082#1086#1083#1086#1085#1082#1072#1084#1080
               TabOrder = 2
               object Label1: TLabel
@@ -722,8 +723,8 @@ object frmMain: TfrmMain
                 Caption = #1056#1072#1079#1076#1077#1083#1080#1090#1077#1083#1100
               end
               object SpeedButton8: TSpeedButton
-                Left = 117
-                Top = 40
+                Left = 115
+                Top = 35
                 Width = 100
                 Height = 30
                 Caption = #1056#1072#1089#1090#1103#1085#1091#1090#1100
@@ -734,6 +735,7 @@ object frmMain: TfrmMain
                 Top = 7
                 Width = 38
                 Height = 21
+                MaxLength = 1
                 TabOrder = 0
               end
             end
@@ -824,7 +826,7 @@ object frmMain: TfrmMain
     Left = 208
     Top = 112
     Bitmap = {
-      494C01010C00A000140118001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C00A000040018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -2035,7 +2037,7 @@ object frmMain: TfrmMain
     Left = 392
     Top = 112
     Bitmap = {
-      494C010102000800240010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102000800040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
